@@ -9,16 +9,20 @@
 void main (){
     int matricula;
     char nome[100];
-    FILE *f;
+    FILE *arq;
 
     printf("Matricula: ");
     scanf("%d", &matricula);
     printf("Nome: ");
     scanf("%s", nome);
 
-    f = fopen("saida.txt", "w");
-    fprintf(f,"%d %s \n", matricula, nome);
+    arq = fopen("saida.txt", "w");
+    fprintf(arq,"%d %s \n", matricula, nome);
     //fprintf(stdout, "ola \n");
-    fclose(f);
+
+    fscanf(arq,"%d %s", &matricula, nome);
+    printf("%d %s\n", matricula, nome);
+
+    fclose(arq);
 
 }
