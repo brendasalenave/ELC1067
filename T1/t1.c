@@ -92,15 +92,10 @@ void leNotas(int matricula, float* nota1, float* nota2){
 void buscaAluno(int matricula, char* nome){
     float n1, n2, media;
 
-    if(nome == NULL){
-        printf("Aluno nao encontrado");
-        return;
+   leNotas(matricula, &n1, &n2);
+   media = (n1+n2)/2;
+   printf("\n%.2f %s\n", media, nome);
 
-    }else{
-        leNotas(matricula, &n1, &n2);
-        media = (n1+n2)/2;
-        printf("\n%.2f %s\n", media, nome);
-    }
     return;
 }
 
@@ -114,8 +109,9 @@ int main(int argc, char** argv){
     scanf("%s", &aluno);
 
     int k = leAlunos(matricula, nomes, aluno, &n);
-    if(k = 1)
+    if(k == 1){
         printf("\nALUNO NAO ENCONTRADO !\n");
+    }
 
     return 0;
 
