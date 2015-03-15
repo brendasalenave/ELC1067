@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void leAlunos(int* matriculas, char nomes[50][50],char* aluno, int* n);
+int leAlunos(int* matriculas, char nomes[50][50],char* aluno, int* n);
 void leNotas(int matricula, float* nota1, float* nota2);
 void buscaAluno(int matricula, char *nome);
 
@@ -35,9 +35,10 @@ void leNotas(int matricula, float* nota1, float* nota2){
 }
 
 
- void leAlunos(int* matriculas, char nomes[50][50],char* aluno, int* n){
+ int leAlunos(int* matriculas, char nomes[50][50],char* aluno, int* n){
     int mat, i;
     int linha = 0;
+    int k = 1;
     char c;
 
     char nome[50];
@@ -70,6 +71,7 @@ void leNotas(int matricula, float* nota1, float* nota2){
         nome[i] = '\0';
 
         if(strstr(nome,aluno) != NULL){
+            k = 0;
             buscaAluno(mat, nome);
         }
 
@@ -80,6 +82,11 @@ void leNotas(int matricula, float* nota1, float* nota2){
     *n = linha;
 
     fclose(f);
+
+    if(k == 1)
+        return 1;
+    else
+        return 0;
 }
 
 void buscaAluno(int matricula, char* nome){
@@ -88,8 +95,8 @@ void buscaAluno(int matricula, char* nome){
     if(nome == NULL){
         printf("Aluno nao encontrado");
         return;
-    }else{
 
+    }else{
         leNotas(matricula, &n1, &n2);
         media = (n1+n2)/2;
         printf("\n%.2f %s\n", media, nome);
@@ -106,7 +113,9 @@ int main(int argc, char** argv){
     printf("Nome do aluno: ");
     scanf("%s", &aluno);
 
-    leAlunos(matricula, nomes, aluno, &n);
+    int k = leAlunos(matricula, nomes, aluno, &n);
+    if(k = 1)
+        printf("\nALUNO NAO ENCONTRADO !\n");
 
     return 0;
 
