@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int leAlunos(int* matriculas, char nomes[50][50],char* aluno, int* n);
+int leAlunos(int* matriculas, char** nomes,char* aluno, int* n);
 void leNotas(int matricula, float* nota1, float* nota2);
 void buscaAluno(int matricula, char *nome);
 int countLine();
@@ -36,7 +36,7 @@ void leNotas(int matricula, float* nota1, float* nota2){
 }
 
 
- int leAlunos(int* matriculas, char nomes[50][50],char* aluno, int* n){
+ int leAlunos(int* matriculas, char** nomes, char* aluno, int* n){
     int mat, i;
     int linha = 0;
     int k = 1;
@@ -125,14 +125,20 @@ int countLine(){
 
 int main(int argc, char** argv){
     int* matricula;
-    char nomes[50][50];
-    //char aluno[50];
-    int n;
-
+    char** nomes;
+    char aluno[50];
+    int n, i;
     int p = countLine();
+
+    /*char* aluno;
+    aluno = (char *) malloc (p * sizeof(char)); //alocando a string aluno */
+
+    nomes = (char**)malloc(p * sizeof(char*));
+    for ( i = 0; i < p; i++ ){
+        nomes[i] = (char*) malloc (50 * sizeof(char)); //aqui tu vai estar alocando as strings
+    }
+
     matricula = (int*)malloc(50 *sizeof(int));
-    char* aluno;
-    aluno = (char *) malloc (p * sizeof(char)); //alocando a string aluno
 
     printf("Nome do aluno: ");
     scanf("%s", &aluno);
@@ -143,7 +149,7 @@ int main(int argc, char** argv){
     }
 
     free(matricula);
-    //free(aluno);
+    free(nomes);
 
     return 0;
 
