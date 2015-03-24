@@ -138,7 +138,7 @@ int main(int argc, char** argv){
         nomes[i] = (char*) malloc (50 * sizeof(char)); //aqui tu vai estar alocando as strings
     }
 
-    matricula = (int*)malloc(50 *sizeof(int));
+    matricula = (int*)malloc(50*sizeof(int));
 
     printf("Nome do aluno: ");
     scanf("%s", &aluno);
