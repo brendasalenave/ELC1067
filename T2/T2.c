@@ -3,44 +3,23 @@
 #include <string.h>
 
 int leAlunos(int* matriculas, char** nomes,char* aluno, int* n);
-void leNotas(int matricula, float* nota1, float* nota2);
-void buscaAluno(int matricula, char *nome);
+//void leNotas(int matricula, float* nota1, float* nota2);
+float* buscaAluno(int* vetMatricula, char *vetNome);
 int countLine();
-
-void leNotas(int matricula, float* nota1, float* nota2){
-    float n1, n2;
-    int mat;
-    FILE *f;
-
-    f = fopen("notas.txt","r");
-    if(f == NULL){
-        printf("Não foi possível abrir arquivo. \n");
-        return;
-    }
-
-    while(feof(f) == 0){
-        if(fscanf(f,"%d", &mat) < 0)
-            break;
-
-        fscanf(f,"%f %f", &n1, &n2);
-
-        if(mat == matricula){
-            *nota1 = n1;
-            *nota2 = n2;
-            return;
-        }
-
-    }
-        fclose(f);
-        return;
-}
 
 
  int leAlunos(int* matriculas, char** nomes, char* aluno, int* n){
     int mat, i;
     int linha = 0;
     int k = 1;
+    int j = 0;
+    int* vetMatriculas;
+    char* vetNomes;
     char c;
+
+    int nlinha = countLine();
+    vetMatriculas = (int*) malloc (nlinha * sizeof(int));
+    vetNomes = (char*) malloc (nlinha* sizeof(char));
 
     char* nome;
     nome = (char*)malloc(50*sizeof(char));
@@ -74,7 +53,10 @@ void leNotas(int matricula, float* nota1, float* nota2){
 
         if(strstr(nome,aluno) != NULL){
             k = 0;
-            buscaAluno(mat, nome);
+            vetNomes[j] = *nome;
+            vetMatriculas[j] = mat;
+            j++;
+
         }
 
         matriculas[linha] = mat;
@@ -85,7 +67,15 @@ void leNotas(int matricula, float* nota1, float* nota2){
 
     fclose(f);
 
+    float* p = (float*) malloc (nlinha * sizeof(float));
+    p =  buscaAluno(vetMatriculas, vetNomes);
+    for(i=0; i< nlinha; i++){
+        printf("%s %f", vetNomes[i], p[i]);
+    }
+
     free(nome);
+    free(vetMatriculas);
+    free(vetNomes);
 
     if(k == 1)
         return 1;
@@ -93,15 +83,38 @@ void leNotas(int matricula, float* nota1, float* nota2){
         return 0;
 }
 
-void buscaAluno(int matricula, char* nome){
-    float n1, n2, media;
+float* buscaAluno(int* vetMatricula, char* vetNome){
 
-   leNotas(matricula, &n1, &n2);
-   media = (n1+n2)/2;
-   printf("\n%.2f %s\n", media, nome);
+    float n1, n2;
+    float* vetMedias;
+    int mat, i;
+    int linha = countLine();
+    FILE *f;
 
-    return;
+    f = fopen("notas.txt","r");
+    if(f == NULL){
+        printf("Não foi possível abrir arquivo. \n");
+        return;
+    }
+
+    vetMedias = (float*) malloc (linha * sizeof(float));
+
+    while(feof(f) == 0){
+        if(fscanf(f,"%d", &mat) < 0)
+            break;
+
+        fscanf(f,"%f %f", &n1, &n2);
+
+        for(i=0; i<linha; i++){
+            if(mat == vetMatricula[i])
+                vetMatricula[i] = ((n1+n2)/2);
+        }
+    }
+
+        fclose(f);
+        return vetMedias;
 }
+
 
 int countLine(){
     int c;
@@ -118,7 +131,7 @@ int countLine(){
             n++;
     }
     fclose(arq);
-    printf("Numero de linhas: %d\n\n", n);
+    //printf("Numero de linhas: %d\n\n", n);
 
     return n;
 }
@@ -126,12 +139,11 @@ int countLine(){
 int main(int argc, char** argv){
     int* matricula;
     char** nomes;
-    char aluno[50];
     int n, i;
     int p = countLine();
 
-    /*char* aluno;
-    aluno = (char *) malloc (p * sizeof(char)); //alocando a string aluno */
+    char* aluno;
+    aluno = (char *) malloc (50 * sizeof(char)); //alocando a string aluno */
 
     nomes = (char**)malloc(p * sizeof(char*));
     for ( i = 0; i < p; i++ ){
@@ -140,8 +152,8 @@ int main(int argc, char** argv){
 
     matricula = (int*)malloc(50*sizeof(int));
 
-    printf("Nome do aluno: ");
-    scanf("%s", &aluno);
+    //printf("Nome do aluno: ");
+    scanf("%s", aluno);
 
     int k = leAlunos(matricula, nomes, aluno, &n);
     if(k == 1){
