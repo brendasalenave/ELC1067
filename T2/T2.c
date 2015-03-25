@@ -37,7 +37,7 @@ void leNotas(int* vetMatricula, char* vetNome){
 
     }
     for(i=0; i < p ; i++){
-        printf("%s %f", vetNome[i], vetMedias[i]);
+        printf("%s %f\n\n", vetNome, vetMedias[i]);
     }
 
         fclose(f);
