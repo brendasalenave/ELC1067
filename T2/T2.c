@@ -38,11 +38,18 @@ void leNotas(int matricula, float* nota1, float* nota2){
 
  int leAlunos(int* matriculas, char** nomes, char* aluno, int* n){
     int mat, i;
+    int j = 0;
     int linha = 0;
     int k = 1;
+    int* vetMatriculas;
+    char* vetNomes;
     char c;
-
     char* nome;
+
+    int p = countLine();
+
+    vetMatriculas = (int*)malloc(p*sizeof(int));
+    vetNomes = (char*)malloc(p*sizeof(char));
     nome = (char*)malloc(50*sizeof(char));
 
     FILE *f;
@@ -85,6 +92,8 @@ void leNotas(int matricula, float* nota1, float* nota2){
 
     fclose(f);
 
+    free(vetMatriculas);
+    free(vetNomes);
     free(nome);
 
     if(k == 1)
