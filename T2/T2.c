@@ -3,14 +3,19 @@
 #include <string.h>
 
 int leAlunos(int* matriculas, char** nomes,char* aluno, int* n);
-void leNotas(int matricula, float* nota1, float* nota2);
-void buscaAluno(int matricula, char *nome);
+void leNotas(int* vetMatricula, char* vetNome);
+//void buscaAluno(int* vetMatricula, char *vetNome);
 int countLine();
 
-void leNotas(int matricula, float* nota1, float* nota2){
+void leNotas(int* vetMatricula, char* vetNome){
     float n1, n2;
+    int i;
     int mat;
+    int p = countLine();
+    float* vetMedias;
     FILE *f;
+
+    vetMedias = (float*)malloc(p * sizeof(float));
 
     f = fopen("notas.txt","r");
     if(f == NULL){
@@ -24,13 +29,17 @@ void leNotas(int matricula, float* nota1, float* nota2){
 
         fscanf(f,"%f %f", &n1, &n2);
 
-        if(mat == matricula){
-            *nota1 = n1;
-            *nota2 = n2;
-            return;
+        for(i=0; i < p ; i++){
+            if(mat == vetMatricula[i]){
+                vetMedias[i] = (n1+n2)/2;
+            }
         }
 
     }
+    for(i=0; i < p ; i++){
+        printf("%s %f", vetNome[i], vetMedias[i]);
+    }
+
         fclose(f);
         return;
 }
@@ -43,8 +52,9 @@ void leNotas(int matricula, float* nota1, float* nota2){
     int k = 1;
     int* vetMatriculas;
     char* vetNomes;
-    char c;
     char* nome;
+    char c;
+
 
     int p = countLine();
 
@@ -80,8 +90,10 @@ void leNotas(int matricula, float* nota1, float* nota2){
         nome[i] = '\0';
 
         if(strstr(nome,aluno) != NULL){
+            vetMatriculas[i] = mat;
+            vetNomes[i] = *nome;
+            j++;
             k = 0;
-            buscaAluno(mat, nome);
         }
 
         matriculas[linha] = mat;
@@ -91,6 +103,8 @@ void leNotas(int matricula, float* nota1, float* nota2){
     *n = linha;
 
     fclose(f);
+
+    leNotas(vetMatriculas, vetNomes);
 
     free(vetMatriculas);
     free(vetNomes);
@@ -102,7 +116,7 @@ void leNotas(int matricula, float* nota1, float* nota2){
         return 0;
 }
 
-void buscaAluno(int matricula, char* nome){
+/*void buscaAluno(int* vetMatricula, char *vetNome){
     float n1, n2, media;
 
    leNotas(matricula, &n1, &n2);
@@ -110,7 +124,7 @@ void buscaAluno(int matricula, char* nome){
    printf("\n%.2f %s\n", media, nome);
 
     return;
-}
+}*/
 
 int countLine(){
     int c;
@@ -127,7 +141,7 @@ int countLine(){
             n++;
     }
     fclose(arq);
-    printf("Numero de linhas: %d\n\n", n);
+    //printf("Numero de linhas: %d\n\n", n);
 
     return n;
 }
