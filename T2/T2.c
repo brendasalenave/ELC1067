@@ -4,7 +4,6 @@
 
 int leAlunos(int* matriculas, char** nomes,char* aluno, int* n);
 void leNotas(int* vetMatricula, char* vetNome);
-//void buscaAluno(int* vetMatricula, char *vetNome);
 int countLine();
 
 void leNotas(int* vetMatricula, char* vetNome){
@@ -36,12 +35,21 @@ void leNotas(int* vetMatricula, char* vetNome){
         }
 
     }
-    for(i=0; i < p ; i++){
-        printf("%s %f\n\n", vetNome, vetMedias[i]);
-    }
+    i = 0;
 
-        fclose(f);
-        return;
+    printf("%s", vetNome);
+    /*while(vetMedias[i]){
+        printf("%s %f\n\n", vetNome, vetMedias[i]);
+        i++;
+    }*/
+
+    /*for(i=0; i < p ; i++){
+        printf("%s %f\n\n", vetNome, vetMedias[i]);
+    }*/
+
+    free(vetMedias);
+    fclose(f);
+    return;
 }
 
 
@@ -90,8 +98,9 @@ void leNotas(int* vetMatricula, char* vetNome){
         nome[i] = '\0';
 
         if(strstr(nome,aluno) != NULL){
-            vetMatriculas[i] = mat;
-            vetNomes[i] = *nome;
+            vetMatriculas[j] = mat;
+            printf("\nNome: %s\n", nome);
+            vetNomes = nome;
             j++;
             k = 0;
         }
