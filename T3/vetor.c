@@ -1,29 +1,6 @@
 /*
  * vetor.c
  * TAD que implementa um vetor dinamico.
- *
- * The MIT License (MIT)
- * 
- * Copyright (c) 2014, 2015 João V. Lima, UFSM
- *               2005       Benhur Stein, UFSM
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
  */
 
 #include <stdio.h>
@@ -35,54 +12,60 @@
 #include "memo.h"
 
 struct vetor {
-	/* TODO aqui */
-	/* defina os campos da TAD vetor aqui */
-
 	carta* baralho;   /* baralho - vetor de cartas */
 	int n;		/* número de cartas */
-};
+}; //vetor_t
 
-vetor_t* vetor_cria(void)
-{
+vetor_t* vetor_cria(void){
+    int i;
 	struct vetor *vet = (struct vetor*)memo_aloca(sizeof(struct vetor));
 	vet->n = 0;
-	/* TODO aqui */
+	vet->baralho = (carta*)memo_aloca(50*sizeof(carta));
+	for(i=0; i<50; i++){
+        vet->baralho[i] = NULL; //inicializa baralho com NULL
+	}
 	return vet;
 }
 
-void vetor_destroi(vetor_t* vet)
-{
-	/* TODO aqui */
-	memo_libera(vet);	
+void vetor_destroi(vetor_t* vet){
+	memo_libera(vet->baralho);
+	memo_libera(vet);
 }
 
-int vetor_numelem(vetor_t *vet)
-{
-	/* TODO aqui */
+/* retorna o número de elementos no vetor vet. */
+int vetor_numelem(vetor_t *vet){
+    int i=0;
+	while(vet->baralho[i] != NULL){
+        vet->n++;
+        i++;
+	}
 	return vet->n;
 }
 
-void vetor_insere_carta(vetor_t *vet, int indice, carta c)
-{
+void vetor_insere_carta(vetor_t *vet, int indice, carta c){
+
 	/* TODO aqui */
 	vet->n++;
 }
 
-carta vetor_remove_carta(vetor_t *vet, int indice)
-{
+carta vetor_remove_carta(vetor_t *vet, int indice){
 	/* TODO aqui */
 	vet->n--;
 	return NULL;
 }
 
-carta vetor_acessa_carta(vetor_t *vet, int indice)
-{
+/* retorna o dado na posição indice do vetor vet */
+carta vetor_acessa_carta(vetor_t *vet, int indice){
+    //struct _carta* c = (struct _carta*)memo_aloca(sizeof(struct _carta));
+
 	/* TODO aqui */
 	return NULL;
 }
 
-bool vetor_valido(vetor_t *vet)
-{
-	/* TODO aqui */
-	return false;
+/* retorna true se o vetor vet for válido */
+bool vetor_valido(vetor_t *vet){
+	if(vet != NULL)
+        return true;
+    else
+        return false;
 }
