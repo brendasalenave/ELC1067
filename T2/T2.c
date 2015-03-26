@@ -3,10 +3,10 @@
 #include <string.h>
 
 int leAlunos(int* matriculas, char** nomes,char* aluno, int* n);
-void leNotas(int* vetMatricula, char* vetNome);
+void leNotas(int* vetMatricula, char** vetNome);
 int countLine();
 
-void leNotas(int* vetMatricula, char* vetNome){
+void leNotas(int* vetMatricula, char** vetNome){
     float n1, n2;
     int i;
     int mat;
@@ -60,7 +60,7 @@ void leNotas(int* vetMatricula, char* vetNome){
     int linha = 0;
     int k = 1;
     int* vetMatriculas;
-    char* vetNomes;
+    char** vetNomes;
     char* nome;
     char c;
 
@@ -68,8 +68,11 @@ void leNotas(int* vetMatricula, char* vetNome){
     int p = countLine();
 
     vetMatriculas = (int*)malloc(p*sizeof(int));
-    vetNomes = (char*)malloc(p*sizeof(char));
     nome = (char*)malloc(50*sizeof(char));
+    vetNomes = (char**)malloc(p*sizeof(char*));
+    for ( i = 0; i < p; i++ ){
+        vetNomes[i] = (char*) malloc (50 * sizeof(char)); //alocando as strings
+    }
 
     FILE *f;
     f = fopen("alunos.txt","r");
