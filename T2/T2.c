@@ -14,6 +14,7 @@ void leNotas(int* vetMatricula, char* vetNome){
     float* vetMedias;
     FILE *f;
 
+    printf("Nome entrada: %s\n", vetNome);
     vetMedias = (float*)malloc(p * sizeof(float));
 
     f = fopen("notas.txt","r");
@@ -99,8 +100,8 @@ void leNotas(int* vetMatricula, char* vetNome){
 
         if(strstr(nome,aluno) != NULL){
             vetMatriculas[j] = mat;
-            printf("\nNome: %s\n", nome);
             vetNomes = nome;
+            printf("\nNome: %s\n", vetNomes);
             j++;
             k = 0;
         }
@@ -112,7 +113,7 @@ void leNotas(int* vetMatricula, char* vetNome){
     *n = linha;
 
     fclose(f);
-
+    printf("\nNome Saida: %s\n", nome);
     leNotas(vetMatriculas, vetNomes);
 
     free(vetMatriculas);
