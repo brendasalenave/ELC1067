@@ -61,8 +61,14 @@ void vetor_insere_carta(vetor_t *vet, int indice, carta c){
  * Retorna a carta original que estava na posição indice do vetor vet.
  */
 carta vetor_remove_carta(vetor_t *vet, int indice){
+    int i;
+
 	carta* c = (struct carta*)memo_aloca(sizeof(carta));
     c = vet->baralho[indice];
+	for(i=vet->n; i > indice; i--){
+        vet->baralho[i] = vet->baralho[i-1];
+	}
+
 	return c;
 
 	//vet->n--;
