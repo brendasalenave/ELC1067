@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1427488384 source:c:\users\brenda\documents\github\elc1067\t3\carta.c
+1427635932 source:c:\users\brenda\documents\github\elc1067\t3\carta.c
 	<stdio.h>
 	<stdlib.h>
 	"carta.h"
