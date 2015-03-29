@@ -20,8 +20,7 @@ struct _carta {
  * a carta será criada fechada.
  * Se v ou n forem inválidos, retorna NULL.
  */
-carta carta_cria(valor v, naipe n)
-{
+carta carta_cria(valor v, naipe n){
 	struct _carta* c = (struct _carta*)memo_aloca(sizeof(struct _carta));
 	c->v = v;
 	c->t = n;
