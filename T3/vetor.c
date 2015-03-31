@@ -51,6 +51,7 @@ void vetor_insere_carta(vetor_t *vet, int indice, carta c){
     if(vet->baralho[indice] == NULL)
         vet->baralho[indice] = c;
     else
+    }
 
 	/* TODO aqui */
 	vet->n++;
