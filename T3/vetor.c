@@ -90,7 +90,7 @@ carta vetor_acessa_carta(vetor_t *vet, int indice){ //OK
 }
 /* retorna true se o vetor vet for válido */
 bool vetor_valido(vetor_t *vet){
-    if(vet != NULL)
+    if(vet->baralho != NULL)
         return true;
     else
         return false;
