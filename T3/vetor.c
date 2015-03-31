@@ -77,16 +77,9 @@ carta vetor_remove_carta(vetor_t *vet, int indice){
 
 /* retorna o dado na posição indice do vetor vet */
 carta vetor_acessa_carta(vetor_t *vet, int indice){
-    carta* c = (struct carta*)memo_aloca(sizeof(carta));
-    /*c->v = vet->baralho[indice]->v;
-    c->t = vet->baralho[indice]->t;*/
-
-    //c->
-
-	if(c == NULL)
-        return NULL;
-    else
-        return c;
+    if(vet->baralho[indice] != NULL)
+        return vet->baralho[indice];
+    else return NULL;
 }
 
 /* retorna true se o vetor vet for válido */
