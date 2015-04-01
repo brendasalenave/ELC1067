@@ -33,11 +33,6 @@ void vetor_destroi(vetor_t* vet){ //Ok
 
 /* retorna o número de elementos no vetor vet. */
 int vetor_numelem(vetor_t *vet){ // Ok
-    //int i=0;
-    //while(vet->baralho[i] != NULL){
-    //    vet->n++;
-    //    i++;
-    //}
     return vet->n;
 }
 
