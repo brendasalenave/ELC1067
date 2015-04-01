@@ -33,11 +33,11 @@ void vetor_destroi(vetor_t* vet){ //Ok
 
 /* retorna o número de elementos no vetor vet. */
 int vetor_numelem(vetor_t *vet){ // Ok
-    int i=0;
-    while(vet->baralho[i] != NULL){
-        vet->n++;
-        i++;
-    }
+    //int i=0;
+    //while(vet->baralho[i] != NULL){
+    //    vet->n++;
+    //    i++;
+    //}
     return vet->n;
 }
 
@@ -57,7 +57,7 @@ void vetor_insere_carta(vetor_t *vet, int indice, carta c){
         if(vet->baralho[ult-1] != NULL){ // vetor cheio
             vet->baralho = (carta*)realloc(vet->baralho, tam*sizeof(carta));
             for(i=ult; i>=indice; i--){
-                vet->baralho[i] = vet->baralho[i+1];
+                vet->baralho[i+1] = vet->baralho[i];
             }
             vet->baralho[indice] = c;
         //ponteiro =(int *) realloc( ponteiro, n*sizeof(int) );
