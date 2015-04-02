@@ -28,6 +28,15 @@ void inicia_jogo(jogo solit){
         vetor_insere_carta(fora_ordem, i, c);
     }
 
+    for(i=0; i<7; i++){ //pilhas
+        carta c;
+        for(j=0; j<=i; j++){//cartas
+            c = vetor_remove_carta(fora_ordem, 0);
+            pilha_insere_carta(jogo_pilha(solit, i),c);
+        }
+        carta_abre(c) // esta no topo
+    }
+
 }
 
 int main(int argc, char **argv){
