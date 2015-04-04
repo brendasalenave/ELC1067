@@ -13,6 +13,7 @@
 void inicia_jogo(jogo solit){
     vetor_t* cartas = vetor_cria();
     vetor_t* fora_ordem = vetor_cria();
+    carta c;
     srand( (unsigned)time(NULL) );
 
     int i, j;
@@ -24,12 +25,11 @@ void inicia_jogo(jogo solit){
     }
     for(i=0; i < vetor_numelem(cartas); i++){
         j = ((int)rand()%vetor_numelem(cartas));
-        carta c = vetor_remove_carta(cartas, j);
+        c = vetor_remove_carta(cartas, j);
         vetor_insere_carta(fora_ordem, i, c);
     }
 
     for(i=0; i<7; i++){ //pilhas
-        carta c;
         for(j=0; j<=i; j++){//cartas
             c = vetor_remove_carta(fora_ordem, 0);
             pilha_insere_carta(jogo_pilha(solit, i),c);
@@ -37,6 +37,13 @@ void inicia_jogo(jogo solit){
         carta_abre(c) // esta no topo
     }
 
+    for(i=0; i<vetor_numelem(fora_ordem); i++){
+        c = vetor_remove_carta(fora_ordem, 0);
+        pilha_insere_carta(jogo_monte(solit), c);
+    }
+
+    vetor_destroi(cartas);
+    vetor_destroi(fora_ordem);
 }
 
 int main(int argc, char **argv){

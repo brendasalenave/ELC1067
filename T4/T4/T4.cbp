@@ -31,6 +31,40 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../carta.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../carta.h" />
+		<Unit filename="../fila.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../fila.h" />
+		<Unit filename="../jogo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../jogo.h" />
+		<Unit filename="../jogo_desenha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../memo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../memo.h" />
+		<Unit filename="../pilha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../pilha.h" />
+		<Unit filename="../principal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tela.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tela.h" />
+		<Unit filename="../vetor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../vetor.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
