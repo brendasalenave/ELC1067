@@ -65,19 +65,16 @@ void carta_abre(carta c){
 }
 
 /* fecha a carta c */
-void carta_fecha(carta c)
-{
+void carta_fecha(carta c){
 	c->aberta= false;
 }
 
 /* retorna true se a carta c estiver aberta. */
-bool carta_aberta(carta c)
-{
+bool carta_aberta(carta c){
 	return c->aberta;
 }
 
 /* retorna true se c for uma carta válida */
-bool carta_valida(carta c)
-{
+bool carta_valida(carta c){
 	return true;
 }

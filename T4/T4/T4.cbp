@@ -31,40 +31,52 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../Makefile" />
 		<Unit filename="../carta.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../carta.h" />
+		<Unit filename="../carta.o" />
+		<Unit filename="../curses.h" />
 		<Unit filename="../fila.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../fila.h" />
+		<Unit filename="../fila.o" />
 		<Unit filename="../jogo.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../jogo.h" />
+		<Unit filename="../jogo.o" />
 		<Unit filename="../jogo_desenha.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../jogo_desenha.o" />
 		<Unit filename="../memo.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../memo.h" />
+		<Unit filename="../memo.o" />
 		<Unit filename="../pilha.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../pilha.h" />
+		<Unit filename="../pilha.o" />
 		<Unit filename="../principal.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../principal.o" />
+		<Unit filename="../solitaire" />
 		<Unit filename="../tela.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../tela.h" />
+		<Unit filename="../tela.o" />
 		<Unit filename="../vetor.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../vetor.h" />
+		<Unit filename="../vetor.o" />
 		<Extensions>
 			<code_completion />
 			<envvars />

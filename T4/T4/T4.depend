@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1427825166 source:c:\users\brenda\documents\github\elc1067\t4\carta.c
+1428428853 source:c:\users\brenda\documents\github\elc1067\t4\carta.c
 	<stdio.h>
 	<stdlib.h>
 	"carta.h"
 	"memo.h"
 
-1427825166 c:\users\brenda\documents\github\elc1067\t4\carta.h
+1428428560 c:\users\brenda\documents\github\elc1067\t4\carta.h
 	<stdlib.h>
 	<stdbool.h>
 
-1427825166 c:\users\brenda\documents\github\elc1067\t4\memo.h
+1427985638 c:\users\brenda\documents\github\elc1067\t4\memo.h
 
-1427825166 source:c:\users\brenda\documents\github\elc1067\t4\fila.c
+1428427893 source:c:\users\brenda\documents\github\elc1067\t4\fila.c
 	<stdio.h>
 	<stdlib.h>
 	<assert.h>
@@ -19,11 +19,149 @@
 	"fila.h"
 	"vetor.h"
 
-1427825166 c:\users\brenda\documents\github\elc1067\t4\fila.h
+1427985638 c:\users\brenda\documents\github\elc1067\t4\fila.h
 	<stdbool.h>
 	"carta.h"
 
-1427378539 c:\users\brenda\documents\github\elc1067\t4\vetor.h
+1427985638 c:\users\brenda\documents\github\elc1067\t4\vetor.h
 	<stdbool.h>
 	"carta.h"
+
+1428428853 source:/home/alunos/bsantana/Área de Trabalho/T4/carta.c
+	<stdio.h>
+	<stdlib.h>
+	"carta.h"
+	"memo.h"
+
+1428428560 /home/alunos/bsantana/Área de Trabalho/T4/carta.h
+	<stdlib.h>
+	<stdbool.h>
+
+1427985638 /home/alunos/bsantana/Área de Trabalho/T4/memo.h
+
+1428427893 source:/home/alunos/bsantana/Área de Trabalho/T4/fila.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"memo.h"
+	"fila.h"
+	"vetor.h"
+
+1427985638 /home/alunos/bsantana/Área de Trabalho/T4/fila.h
+	<stdbool.h>
+	"carta.h"
+
+1427985638 /home/alunos/bsantana/Área de Trabalho/T4/vetor.h
+	<stdbool.h>
+	"carta.h"
+
+1428428901 source:/home/alunos/bsantana/Área de Trabalho/T4/jogo.c
+	<assert.h>
+	"jogo.h"
+	"memo.h"
+
+1428428556 /home/alunos/bsantana/Área de Trabalho/T4/jogo.h
+	"carta.h"
+	"pilha.h"
+	"tela.h"
+
+1428428548 /home/alunos/bsantana/Área de Trabalho/T4/pilha.h
+	<stdbool.h>
+	"carta.h"
+
+1428428042 /home/alunos/bsantana/Área de Trabalho/T4/tela.h
+	<ncurses.h>
+
+1427985638 source:/home/alunos/bsantana/Área de Trabalho/T4/jogo_desenha.c
+	"jogo.h"
+	"tela.h"
+	<assert.h>
+
+1428427833 source:/home/alunos/bsantana/Área de Trabalho/T4/memo.c
+	<stdio.h>
+	<stdlib.h>
+
+1428427845 source:/home/alunos/bsantana/Área de Trabalho/T4/pilha.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+	"pilha.h"
+
+1428427726 source:/home/alunos/bsantana/Área de Trabalho/T4/principal.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"memo.h"
+	"jogo.h"
+	"vetor.h"
+
+1427985638 source:/home/alunos/bsantana/Área de Trabalho/T4/vetor.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"vetor.h"
+	"carta.h"
+	"memo.h"
+
+1428429076 source:/home/alunos/bsantana/Área de Trabalho/T4/tela.c
+	<string.h>
+	<stdlib.h>
+	<assert.h>
+	"tela.h"
+	"memo.h"
+
+1428428901 source:c:\users\brenda\documents\github\elc1067\t4\jogo.c
+	<assert.h>
+	"jogo.h"
+	"memo.h"
+
+1428428556 c:\users\brenda\documents\github\elc1067\t4\jogo.h
+	"carta.h"
+	"pilha.h"
+	"tela.h"
+
+1428428548 c:\users\brenda\documents\github\elc1067\t4\pilha.h
+	<stdbool.h>
+	"carta.h"
+
+1428428042 c:\users\brenda\documents\github\elc1067\t4\tela.h
+	<ncurses.h>
+
+1427985638 source:c:\users\brenda\documents\github\elc1067\t4\jogo_desenha.c
+	"jogo.h"
+	"tela.h"
+	<assert.h>
+
+1428427833 source:c:\users\brenda\documents\github\elc1067\t4\memo.c
+	<stdio.h>
+	<stdlib.h>
+
+1428427845 source:c:\users\brenda\documents\github\elc1067\t4\pilha.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+	"pilha.h"
+
+1428427726 source:c:\users\brenda\documents\github\elc1067\t4\principal.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"memo.h"
+	"jogo.h"
+	"vetor.h"
+
+1428429076 source:c:\users\brenda\documents\github\elc1067\t4\tela.c
+	<string.h>
+	<stdlib.h>
+	<assert.h>
+	"tela.h"
+	"memo.h"
+
+1427985638 source:c:\users\brenda\documents\github\elc1067\t4\vetor.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"vetor.h"
+	"carta.h"
+	"memo.h"
 
