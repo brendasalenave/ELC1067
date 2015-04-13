@@ -16,7 +16,7 @@ struct vetor {
 
 vetor_t* vetor_cria(void){
     int i;
-    int max = 50;
+    int max = 100;
     struct vetor *vet = (struct vetor*)memo_aloca(sizeof(struct vetor));
     vet->n = 0;
     vet->baralho = (carta*)memo_aloca(max*sizeof(carta));
