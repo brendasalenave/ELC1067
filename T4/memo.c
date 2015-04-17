@@ -10,8 +10,7 @@ static long _memo_free = 0;
 static size_t _memo_aloc_bytes = 0;
 static size_t _memo_realoc_bytes = 0;
 
-void* memo_aloca( size_t tam )
-{
+void* memo_aloca( size_t tam ){
 	void *p = malloc( tam );
 	if(p == NULL){
 		printf("ERRO: não consegui alocar memória.\n");
@@ -22,8 +21,7 @@ void* memo_aloca( size_t tam )
 	return p;
 }
 
-void* memo_realoca( void* ptr, size_t tam )
-{
+void* memo_realoca( void* ptr, size_t tam ){
 	void* p = realloc( ptr, tam );
 	if(p == NULL){
 		printf("ERRO: não consegui realocar memória.\n");
@@ -33,8 +31,7 @@ void* memo_realoca( void* ptr, size_t tam )
 	return p;
 }
 
-void memo_libera( void* ptr )
-{
+void memo_libera( void* ptr ){
 	if(ptr == NULL){
 		printf("ERRO: ponteiro nulo!\n");
 		exit(-1);
@@ -43,8 +40,7 @@ void memo_libera( void* ptr )
 	_memo_free++;
 }
 
-void memo_relatorio( void )
-{
+void memo_relatorio( void ){
 	printf("\n** RELATÓRIO DE ALOCAÇÕES DE MEMÓRIA **\n");
 	printf(" * Alocações  : %ld (total de %lu bytes)\n", _memo_aloc, _memo_aloc_bytes );
 	printf(" * Liberações : %ld\n", _memo_free );

@@ -52,7 +52,7 @@ void fila_insere_carta(fila f, carta c)
 /* remove e retorna a carta no topo da fila */
 carta fila_remove_carta(fila f)
 {
-	assert((f != NULL)&&(f->topo > 0));
+	assert((f != NULL) && (f->topo > 0));
 	carta c = vetor_remove_carta(f->vet, f->topo-1);
 	f->topo--;
 	return c;

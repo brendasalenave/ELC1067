@@ -13,35 +13,29 @@ struct _pilha {
 	fila topo;
 };
 
-pilha pilha_cria(void)
-{
+pilha pilha_cria(void){
 	pilha p = (struct _pilha*)malloc(sizeof(struct _pilha));
 	p->topo = fila_cria();
 	return p;
 }
 
-void pilha_destroi(pilha p)
-{
+void pilha_destroi(pilha p){
 	fila_destroi(p->topo);
 	free(p);
 }
 
-bool pilha_vazia(pilha p)
-{
+bool pilha_vazia(pilha p){
 	return fila_vazia(p->topo);
 }
 
-void pilha_insere_carta(pilha p, carta c)
-{
+void pilha_insere_carta(pilha p, carta c){
 	fila_insere_carta(p->topo, c);
 }
 
-carta pilha_remove_carta(pilha p)
-{
+carta pilha_remove_carta(pilha p){
 	return fila_remove_carta(p->topo);
 }
 
-bool pilha_valida(pilha p)
-{
+bool pilha_valida(pilha p){
 	return ((p != NULL) && (p->topo != NULL));
 }

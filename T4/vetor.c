@@ -20,7 +20,7 @@ vetor_t* vetor_cria(void){
     struct vetor *vet = (struct vetor*)memo_aloca(sizeof(struct vetor));
     vet->n = 0;
     vet->baralho = (carta*)memo_aloca(max*sizeof(carta));
-    for(i=0; i<50; i++){
+    for(i=0; i<100; i++){
         vet->baralho[i] = NULL; //inicializa baralho com NULL
     }
     return vet;
@@ -58,7 +58,6 @@ void vetor_insere_carta(vetor_t *vet, int indice, carta c){
         //ponteiro =(int *) realloc( ponteiro, n*sizeof(int) );
         }
     }
-    /* TODO aqui */
     vet->n++;
 }
 /* remove uma carta que estava na posição indice.
@@ -74,7 +73,7 @@ carta vetor_remove_carta(vetor_t *vet, int indice){
         vet->baralho[i] = vet->baralho[i+1];
     }
     vet->n--;
-    vet->baralho[ultimo-1] = NULL;
+    vet->baralho[vet->n] = NULL;
     return c;
 }
 /* retorna o dado na posição indice do vetor vet */
