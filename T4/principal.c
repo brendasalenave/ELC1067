@@ -50,19 +50,20 @@ void inicia_jogo(jogo solit){
     vetor_destroi(fora_ordem);
 }
 
-void abreMonte(jogo solit){
+/*abrir uma carta do monte sobre o descarte*/
+void move_descarte_descarte(jogo solit){
     carta c = pilha_remove_carta(jogo_monte(solit));
     carta_abre(c);
     pilha_insere_carta(jogo_descartes(solit), c);
 }
 
 /* Mover carta do descarte para pilha */
-void moveDescarte(jogo solit){
+void move_descarte_pilha(jogo solit){
     int n;
-    printf ("\ninforme pilha: \n");
+    printf ("\nInforme pilha: \n");
     scanf ("%d",&n);
     if (n > 7 || n < 1){
-        printf ("valor invalido!\n");
+        printf ("Valor invalido!\n");
         return;
     }
     if (!pilha_vazia(jogo_descartes(solit))){
@@ -70,39 +71,46 @@ void moveDescarte(jogo solit){
         pilha_insere_carta(jogo_pilha(solit, n),c);
     }
     else
-        printf ("descarte vazio\n");
+        printf ("Descarte vazio\n");
 }
 
-void movePilha(){
-
-}
-
-void encerraJogo(jogo solit){
-    jogo_destroi(solit);
-    memo_relatorio();
-    exit(0);
-}
-
-void verificaJogada(char c, jogo solit){
-    /*
-    printf("\n** SELECIONE UMA OPCAO **\n");
-	printf(" \n* Abrir monte: o \n");
-	printf(" * Mover carta do descarte para pilha: d\n");
-	printf(" * Abrir uma carta do monte sobre o descarte\n");
-	printf(" * Mover todas as cartas abertas de uma das 7 pilhas para outra: m \n");
-	printf(" * Encerrar jogo: x \n");
-	printf("\n");
-    */
-    printw("\n\nJogada: ");
-    scanf("%c", &c);
-
-
-    if(c == 'x' || c == 'X') encerraJogo(solit);
-    if(c == 'o' || c == 'O') abreMonte(solit);
-    if(c == 'd' || c == 'D') moveDescarte(solit);
-    if(c == 'm' || c == 'M') movePilha();
+/* virar todas as cartas do descarte no monte vazio */
+void vira_carta_descartes(jogo solit){
+    if(!pilha_vazia(jogo_monte(solit))){
+        printf("Monte nao vazio !");
+        return;
+    }
+    while(!pilha_vazia(jogo_descartes(solit))){
+        carta c = pilha_remove_carta(jogo_descartes(solit));
+        carta_abre(c);
+        pilha_insere_carta(jogo_monte(solit), c);
+    }
     return;
 }
+
+void movePilha(jogo solit){
+    int p1, p2;
+    printf("Mover da pilha ");
+    scanf("%d", &p1);
+    printf(" para pilha: ");
+    scanf("%d", &p2);
+    if (p1 > 7 || p1 < 1 || p2 > 7 || p2 < 1){
+        printf ("Valor invalido!\n");
+        return;
+    }
+
+    //enquanto carta aberta, remove carta de p1 e insere em p2
+    while(!pilha_vazia(jogo_pilha(solit, p1))){
+        carta c = pilha_remove_carta(jogo_pilha(solit, p1));
+
+        if(!carta_aberta(c)) return;
+
+        pilha_insere_carta(jogo_pilha(solit, p2));
+    }
+
+    return;
+}
+
 
 int main(int argc, char **argv){
     char c;
@@ -110,38 +118,30 @@ int main(int argc, char **argv){
 	solit = jogo_cria();
 
     inicia_jogo(solit);
- //   verificaJogada(c, solit);
 
     do {
         jogo_desenha(solit);
 
-        //verificaJogada(c, solit);
-        printw("\n** SELECIONE UMA OPCAO **\n");
-        printw("\n* Abrir monte: o \n");
-        printw(" * Mover carta do descarte para pilha: d\n");
-        printw(" * Abrir uma carta do monte sobre o descarte\n");
-        printw(" * Mover todas as cartas abertas de uma das 7 pilhas para outra: m \n");
+        printw("\n** Jogada: **\n\n");
+        printw(" * Abrir monte: \n");
+        printw(" * Mover carta do descarte para pilha: d\n"); /* Feito */
+        printw(" * Abrir uma carta do monte sobre o descarte: o\n"); /* Feito */
+        printw(" * Virar todas as cartas do descarte no monte vazio: v\n"); /* Feito */
+        printw(" * Mover todas as cartas abertas de uma das 7 pilhas para outra: m\n"); /* Feito */
         printw(" * Encerrar jogo: x \n");
         printw("\n");
 
         c = (char)tela_le(jogo_tela(solit));
         printw("%c\n", c);
 
-        //if(c == 'x' || c == 'X') encerraJogo(solit);
-
-        if(c == 'o' || c == 'O') abreMonte(solit);
-        if(c == 'd' || c == 'D') moveDescarte(solit);
-        if(c == 'm' || c == 'M') movePilha();
-
-        //tela_escreve_direitado(jogo_tela(solit),"\n\nNNNANSDANA\n", 60);
-
-        //tela_le(jogo_tela(solit));
+        if(c == 'o' || c == 'O') move_monte_descarte(solit);
+        if(c == 'd' || c == 'D') move_descarte_pilha(solit);
+        if(c == 'v' || c == 'V') vira_carta_descartes(solit);
+        if(c == 'm' || c == 'M') movePilha(solit);
 
 	}while(c!='x'&& c!='X');
 
 	jogo_destroi(solit);
-	//if(c == 'n')
-     //   printf("NNNANSDANA\n");
 
 	/* relatório de memória */
 	memo_relatorio();

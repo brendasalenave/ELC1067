@@ -193,3 +193,78 @@
 	"jogo.h"
 	"vetor.h"
 
+1429032397 source:/tmp/guest-gHynvi/Área de Trabalho/T4.1/carta.c
+	<stdio.h>
+	<stdlib.h>
+	"carta.h"
+	"memo.h"
+
+1428428560 /tmp/guest-gHynvi/Área de Trabalho/T4.1/carta.h
+	<stdlib.h>
+	<stdbool.h>
+
+1428600827 /tmp/guest-gHynvi/Área de Trabalho/T4.1/memo.h
+
+1429203943 source:/tmp/guest-gHynvi/Área de Trabalho/T4.1/fila.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"memo.h"
+	"fila.h"
+	"vetor.h"
+
+1427985638 /tmp/guest-gHynvi/Área de Trabalho/T4.1/fila.h
+	<stdbool.h>
+	"carta.h"
+
+1427985638 /tmp/guest-gHynvi/Área de Trabalho/T4.1/vetor.h
+	<stdbool.h>
+	"carta.h"
+
+1429030739 source:/tmp/guest-gHynvi/Área de Trabalho/T4.1/jogo.c
+	<assert.h>
+	"jogo.h"
+	"memo.h"
+
+1428428556 /tmp/guest-gHynvi/Área de Trabalho/T4.1/jogo.h
+	"carta.h"
+	"pilha.h"
+	"tela.h"
+
+1428428548 /tmp/guest-gHynvi/Área de Trabalho/T4.1/pilha.h
+	<stdbool.h>
+	"carta.h"
+
+1428428042 /tmp/guest-gHynvi/Área de Trabalho/T4.1/tela.h
+	<ncurses.h>
+
+1427985638 source:/tmp/guest-gHynvi/Área de Trabalho/T4.1/jogo_desenha.c
+	"jogo.h"
+	"tela.h"
+	<assert.h>
+
+1428599157 source:/tmp/guest-gHynvi/Área de Trabalho/T4.1/memo.c
+	<stdio.h>
+	<stdlib.h>
+
+1428599414 source:/tmp/guest-gHynvi/Área de Trabalho/T4.1/pilha.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+	"pilha.h"
+
+1428429076 source:/tmp/guest-gHynvi/Área de Trabalho/T4.1/tela.c
+	<string.h>
+	<stdlib.h>
+	<assert.h>
+	"tela.h"
+	"memo.h"
+
+1429032781 source:/tmp/guest-gHynvi/Área de Trabalho/T4.1/vetor.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"vetor.h"
+	"carta.h"
+	"memo.h"
+
