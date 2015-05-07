@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1430068032 source:/home/brenda/ELC1067/T5/geom.c
+	"geom.h"
+	<math.h>
+
+1430068032 /home/brenda/ELC1067/T5/geom.h
+	<stdbool.h>
+
+1430068032 source:/home/brenda/ELC1067/T5/lista.c
+	"lista.h"
+	"memo.h"
+
+1430068032 /home/brenda/ELC1067/T5/lista.h
+	<stdlib.h>
+	"memo.h"
+
+1430068032 /home/brenda/ELC1067/T5/memo.h
+
+1430068032 source:/home/brenda/ELC1067/T5/memo.c
+	<stdio.h>
+	<stdlib.h>
+
+1430068032 source:/home/brenda/ELC1067/T5/principal.c
+	<stdlib.h>
+	<stdbool.h>
+	<stdio.h>
+	<unistd.h>
+	"texto.h"
+	"memo.h"
+
+1430068032 /home/brenda/ELC1067/T5/texto.h
+	"tela.h"
+	"lista.h"
+
+1430068032 /home/brenda/ELC1067/T5/tela.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_primitives.h>
+	"geom.h"
+
+1430068032 source:/home/brenda/ELC1067/T5/texto.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	<string.h>
+	"texto.h"
+	"tela.h"
+	"memo.h"
+	"lista.h"
+
+1430068510 source:/home/brenda/ELC1067/T5/tela.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"tela.h"
+
