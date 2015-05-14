@@ -21,7 +21,7 @@ void libera_lista(lista_t* li);
 int consulta_lista_pos(lista_t* li, int pos, char *str);
 lista_t* buscar(lista_t* inicio, char* str);
 //lista_t* remove_lista(lista_t* inicio);
-lista_t* remove_lista_inicio(lista_t* li);
+lista_t* remove_lista_inicio(lista_t* li)
 //int remove_lista(lista_t* li, char* str);
 //int remove_lista_fim(lista_t* li);
 int tamanho_lista(lista_t* li);

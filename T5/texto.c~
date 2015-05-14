@@ -135,7 +135,6 @@ bool texto_processa_comandos(texto_t* txt){
 	if( tecla == ALLEGRO_KEY_S && (modificador & ALLEGRO_KEYMOD_CTRL) ) {
 		printf("CTRL+S SALVAR e PARAR DE EDITAR\n");
 		FILE* arq;
-		lista_t* lista;
 		arq = fopen("arquivo.txt","w");
 		if(arq == NULL){
 		    printf("Erro na abertura do arquivo!");
