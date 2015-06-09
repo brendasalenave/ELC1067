@@ -15,58 +15,50 @@ arv_t* arv_cria(op_t op){
 
 
 /* insere um novo dado na árvore a esquerda */
-arv_t* arv_insere_esquerda(arv_t* arv, op_t op){
-    if(arv->esq == NULL){
-        arv = (arv_t*)malloc(sizeof(arv_t));
-        arv->esq = NULL;
-        arv->dir = NULL;
-        arv->dado = op;
-     }else
-        return arv_insere_esquerda(arv->esq, op);
-
+arv_t* arv_insere_esquerda(arv_t* arv, arv_t* filho){
+    arv->esq = filho;
     return arv;
 }
 
 /* insere um novo dado na árvore a direita */
-arv_t* arv_insere_direita(arv_t* arv, op_t op){
-    if(arv->dir == NULL){
-        arv = (arv_t*)malloc(sizeof(arv_t));
-        arv->esq = NULL;
-        arv->dir = NULL;
-        arv->dado = op;
-     }else
-        return arv_insere_direita(arv->dir, op);
-
+arv_t* arv_insere_direita(arv_t* arv, arv_t* filho){
+    arv->dir = filho;
     return arv;
 }
 
 /* imprime a árvore em pré-ordem: raiz, esquerda, e direita */
 void arv_imprime_pre_ordem(arv_t* arv){
-    if (arv != NULL)      {
+    if (arv != NULL){
+        printf("(");
         if(arv->dado.tipo == OPERANDO) printf(" %f", arv->dado.u.operando);
         else printf("%c", arv->dado.u.operador);
         arv_imprime_pre_ordem(arv->esq);
         arv_imprime_pre_ordem(arv->dir);
+        printf(")");
     }
 }
 
 /* imprime a árvore em ordem: esquerda, raiz, e direita */
 void arv_imprime_em_ordem(arv_t* arv){
-    if (arv != NULL)      {
+    if (arv != NULL){
+        printf("(");
         arv_imprime_em_ordem(arv->esq);
         if(arv->dado.tipo == OPERANDO) printf(" %f", arv->dado.u.operando);
         else printf("%c", arv->dado.u.operador);
         arv_imprime_em_ordem(arv->dir);
+        printf(")");
     }
 }
 
 /* imprime a árvore em pós-ordem: esquerda, direita, e raiz */
 void arv_imprime_pos_ordem(arv_t* arv){
-    if (arv != NULL)      {
+    if (arv != NULL){
+        printf("(");
         arv_imprime_pos_ordem(arv->esq);
         arv_imprime_pos_ordem(arv->dir);
         if(arv->dado.tipo == OPERANDO) printf(" %f", arv->dado.u.operando);
         else printf("%c", arv->dado.u.operador);
+        printf(")");
     }
 }
 

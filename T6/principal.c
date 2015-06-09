@@ -3,6 +3,7 @@
  * Implementação de árvore de expressões aritméticas.
  */
 
+
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -15,7 +16,7 @@
 int main(int argc, char **argv)
 {
 	/* exemplo simples de árvore */
-	arv_t* raiz;
+	arv_t *raiz, *arv_esq, *arv_dir;
 	op_t soma, n1, n2;
 	pilha_t* pilha;
 
@@ -32,8 +33,11 @@ int main(int argc, char **argv)
 
 	/* cria uma árvore */
 	raiz = arv_cria( soma );
-	raiz = arv_insere_esquerda( raiz, n1 );
-	raiz = arv_insere_direita( raiz, n2 );
+	arv_esq = arv_cria( n1 );
+	arv_dir = arv_cria( n2 );
+	raiz = arv_insere_esquerda( raiz, arv_esq );
+	raiz = arv_insere_direita( raiz, arv_dir );
+
 
 	/* simples uso da pilha */
 	pilha = pilha_cria();
@@ -42,6 +46,8 @@ int main(int argc, char **argv)
 
 	/* destroi árvore */
 	raiz = arv_destroi( raiz );
+	//arv_destroi( arv_esq );
+	//arv_destroi( arv_dir );
 
 	return 0;
 }
