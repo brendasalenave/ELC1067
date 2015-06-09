@@ -1,7 +1,18 @@
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
 #include "arv.h"
+#include "pilha.h"
+
+arv_t* arv_cria(op_t op){
+    arv_t* p =(arv_t*)malloc(sizeof(arv_t));
+    p->dado = op;
+    p->esq = NULL;
+    p->dir = NULL;
+    return p;
+}
+
 
 /* insere um novo dado na árvore a esquerda */
 arv_t* arv_insere_esquerda(arv_t* arv, op_t op){
@@ -68,3 +79,4 @@ arv_t* arv_destroi(arv_t* arv){
     }
     return NULL;
 }
+

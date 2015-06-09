@@ -3,6 +3,19 @@
 	<stdio.h>
 	<stdlib.h>
 
+1433542241 source:c:\users\brenda\documents\github\elc1067\t6\pilha.c
+	<stdlib.h>
+	<stdio.h>
+	"pilha.h"
+	"arv.h"
+
+1433542032 c:\users\brenda\documents\github\elc1067\t6\pilha.h
+	<stdbool.h>
+	"arv.h"
+
+1433856522 c:\users\brenda\documents\github\elc1067\t6\arv.h
+	<stdbool.h>
+
 1433541670 source:c:\users\brenda\documents\github\elc1067\t6\principal.c
 	<stdlib.h>
 	<stdbool.h>
@@ -12,23 +25,5 @@
 	"pilha.h"
 	"memo.h"
 
-1433326254 c:\users\brenda\documents\github\elc1067\t6\arv.h
-	<stdbool.h>
-
-1433542032 c:\users\brenda\documents\github\elc1067\t6\pilha.h
-	<stdbool.h>
-	"arv.h"
-
 1433542247 c:\users\brenda\documents\github\elc1067\t6\memo.h
-
-1433542802 source:c:\users\brenda\documents\github\elc1067\t6\arv.c
-	<stdio.h>
-	<stdlib.h>
-	"arv.h"
-
-1433542241 source:c:\users\brenda\documents\github\elc1067\t6\pilha.c
-	<stdlib.h>
-	<stdio.h>
-	"pilha.h"
-	"arv.h"
 
