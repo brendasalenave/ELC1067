@@ -8,6 +8,7 @@
 #include <stdbool.h>
 
 #include "arv.h"
+#include "memo.h"
 
 typedef struct elem{
     arv_t* nodo;

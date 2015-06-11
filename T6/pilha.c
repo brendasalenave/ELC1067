@@ -4,7 +4,7 @@
 #include "arv.h"
 
 pilha_t *pilha_cria(void){
-    pilha_t* p = (pilha_t*) malloc(sizeof(pilha_t));
+    pilha_t* p = (pilha_t*)memo_aloca(sizeof(pilha_t));
     p->topo = NULL;
     return p;
 }
@@ -24,7 +24,7 @@ bool pilha_vazia(pilha_t* p){
 
 /* insere o dado arv do tipo arv_t na pilha p */
 void pilha_insere(pilha_t* p, arv_t* arv){
-    Elem* e = (Elem*) malloc(sizeof(Elem));
+    Elem* e = (Elem*)memo_aloca(sizeof(Elem));
     e->nodo = arv;
     e->ant = p->topo;
     p->topo = e;
@@ -39,7 +39,7 @@ arv_t* pilha_remove(pilha_t* p){
     Elem *ant = p->topo->ant;
 
     arv_t* no = p->topo->nodo;
-    free(p->topo);
+    memo_libera(p->topo);
     p->topo = ant;
     return no;
 }

@@ -38,46 +38,52 @@ arv_t* arv_constroi(pilha_t* p, op_t n){
 int main(int argc, char **argv){
 
 	/* exemplo simples de árvore */
-	arv_t *raiz, *arv_esq, *arv_dir;
-	op_t soma, n1, n2;
+	arv_t *raiz;
+	op_t n, k;
 	pilha_t* pilha;
     pilha = pilha_cria();
 
+    float valor;
+    int t;
+    char op;
+
 	/* inicia expressão */
-	/* operador + */
 
-	soma.tipo = OPERADOR;
-	soma.u.operador = '+';
-	/* primeiro operando */
-	n1.tipo = OPERANDO;
-	n1.u.operando = 1.0;
-	/* segundo operando */
-	n2.tipo = OPERANDO;
-	n2.u.operando = 2.0;
+	printf("EXPRESSAO \n1: operando \n2: operador \n*encerrar expressao: 3\n\n");
 
-    raiz = arv_constroi(pilha, n1);
-    raiz = arv_constroi(pilha, n2);
-    raiz = arv_constroi(pilha, soma);
+	do{
+        printf("\nTipo: ");
+        scanf("%d", &t);
+        if(t == 1){
+            printf("Operando: ");
+            n.tipo = OPERANDO;
+            scanf("%f", &valor);
+            n.u.operando = valor;
+            raiz = arv_constroi(pilha, n);
 
+        }else if(t == 2){
+            printf("Operador: ");
+            k.tipo = OPERADOR;
+            scanf(" %c", &op);
+            k.u.operador = op;
+            raiz = arv_constroi(pilha, k);
+        }
+	}while(t == 1 || t == 2);
+
+    printf("Em ordem: ");
     arv_imprime_em_ordem(raiz);
-    printf("\n\n");
+    printf("\n\nPos ordem: ");
     arv_imprime_pos_ordem(raiz);
-
-	/* cria uma árvore */
-	/*raiz = arv_cria( soma );
-	arv_esq = arv_cria( n1 );
-	arv_dir = arv_cria( n2 );
-	raiz = arv_insere_esquerda( raiz, arv_esq );
-	raiz = arv_insere_direita( raiz, arv_dir ); */
-
 
 	//pilha_insere( pilha, raiz );
 	pilha_destroi( pilha );
 
 	/* destroi árvore */
 	raiz = arv_destroi( raiz );
-	//arv_destroi( arv_esq );
-	//arv_destroi( arv_dir );
+
+    printf("\n\n");
+	memo_relatorio();
+
 
 	return 0;
 }

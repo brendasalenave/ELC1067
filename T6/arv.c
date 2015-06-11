@@ -3,9 +3,10 @@
 #include <stdbool.h>
 
 #include "arv.h"
+#include "memo.h"
 
 arv_t* arv_cria(op_t op){
-    arv_t* p =(arv_t*)malloc(sizeof(arv_t));
+    arv_t* p =(arv_t*)memo_aloca(sizeof(arv_t));
     p->dado = op;
     p->esq = NULL;
     p->dir = NULL;
@@ -66,7 +67,7 @@ arv_t* arv_destroi(arv_t* arv){
     if (arv != NULL){
         arv_destroi(arv->esq);
         arv_destroi(arv->dir);
-        free(arv);
+        memo_libera(arv);
     }
     return NULL;
 }
