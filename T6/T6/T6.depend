@@ -9,11 +9,11 @@
 	"pilha.h"
 	"arv.h"
 
-1433542032 c:\users\brenda\documents\github\elc1067\t6\pilha.h
+1434031124 c:\users\brenda\documents\github\elc1067\t6\pilha.h
 	<stdbool.h>
 	"arv.h"
 
-1433860096 c:\users\brenda\documents\github\elc1067\t6\arv.h
+1434031291 c:\users\brenda\documents\github\elc1067\t6\arv.h
 	<stdbool.h>
 
 1433860678 source:c:\users\brenda\documents\github\elc1067\t6\principal.c
@@ -27,10 +27,9 @@
 
 1433542247 c:\users\brenda\documents\github\elc1067\t6\memo.h
 
-1433860617 source:c:\users\brenda\documents\github\elc1067\t6\arv.c
+1434031312 source:c:\users\brenda\documents\github\elc1067\t6\arv.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 	"arv.h"
-	"pilha.h"
 

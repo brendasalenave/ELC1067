@@ -7,6 +7,7 @@
 
 #include <stdbool.h>
 
+
 /* enumerador para operador ou operando */
 typedef enum {OPERADOR, OPERANDO} op_tipo_t;
 
@@ -36,6 +37,7 @@ arv_t* arv_insere_esquerda(arv_t* arv, arv_t* filho);
 
 /* insere um novo dado na árvore a direita */
 arv_t* arv_insere_direita(arv_t* arv, arv_t* filho);
+
 
 /* imprime a árvore em pré-ordem: raiz, esquerda, e direita */
 void arv_imprime_pre_ordem(arv_t* arv);
