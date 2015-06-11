@@ -19,6 +19,7 @@ int main(int argc, char **argv)
 	arv_t *raiz, *arv_esq, *arv_dir;
 	op_t soma, n1, n2;
 	pilha_t* pilha;
+    pilha = pilha_cria();
 
 	/* inicia expressão */
 	/* operador + */
@@ -39,8 +40,6 @@ int main(int argc, char **argv)
 	raiz = arv_insere_direita( raiz, arv_dir );
 
 
-	/* simples uso da pilha */
-	pilha = pilha_cria();
 	pilha_insere( pilha, raiz );
 	pilha_destroi( pilha );
 
