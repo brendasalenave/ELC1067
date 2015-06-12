@@ -30,7 +30,7 @@ arv_t* arv_insere_direita(arv_t* arv, arv_t* filho){
 void arv_imprime_pre_ordem(arv_t* arv){
     if (arv != NULL){
         printf("(");
-        if(arv->dado.tipo == OPERANDO) printf(" %f", arv->dado.u.operando);
+        if(arv->dado.tipo == OPERANDO) printf(" %.2f", arv->dado.u.operando);
         else printf("%c", arv->dado.u.operador);
         arv_imprime_pre_ordem(arv->esq);
         arv_imprime_pre_ordem(arv->dir);
@@ -43,7 +43,7 @@ void arv_imprime_em_ordem(arv_t* arv){
     if (arv != NULL){
         printf("(");
         arv_imprime_em_ordem(arv->esq);
-        if(arv->dado.tipo == OPERANDO) printf(" %f", arv->dado.u.operando);
+        if(arv->dado.tipo == OPERANDO) printf(" %.2f", arv->dado.u.operando);
         else printf("%c", arv->dado.u.operador);
         arv_imprime_em_ordem(arv->dir);
         printf(")");
@@ -56,7 +56,7 @@ void arv_imprime_pos_ordem(arv_t* arv){
         printf("(");
         arv_imprime_pos_ordem(arv->esq);
         arv_imprime_pos_ordem(arv->dir);
-        if(arv->dado.tipo == OPERANDO) printf(" %f", arv->dado.u.operando);
+        if(arv->dado.tipo == OPERANDO) printf(" %.2f", arv->dado.u.operando);
         else printf("%c", arv->dado.u.operador);
         printf(")");
     }
@@ -72,20 +72,20 @@ arv_t* arv_destroi(arv_t* arv){
     return NULL;
 }
 
-double calcula(arv_t* arv){
+double arv_calcula(arv_t* arv){
     if(arv->dado.tipo == OPERANDO){
         return arv->dado.u.operando;
     }else{
-        double valor1 = calcula(arv->esq);
-        double valor2 = calcula(arv->esq);
+        double valor1 = arv_calcula(arv->esq);
+        double valor2 = arv_calcula(arv->dir);
         if(arv->dado.u.operador == '+'){
-            return (valor1 + valor2);
+            return (valor2 + valor1);
         }else if(arv->dado.u.operador == '-'){
-            return (valor1 - valor2);
+            return (valor2 - valor1);
         }else if(arv->dado.u.operador == '/'){
-            return (valor1 / valor2);
+            return (valor2 / valor1);
         }else if(arv->dado.u.operador == '*'){
-            return (valor1 * valor2);
+            return (valor2 * valor1);
         }
     }
 }

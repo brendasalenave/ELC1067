@@ -50,4 +50,6 @@ void arv_imprime_pos_ordem(arv_t* arv);
 /*  destroi toda a árvore */
 arv_t* arv_destroi(arv_t* arv);
 
+double arv_calcula(arv_t* arv);
+
 #endif /* _ARV_H_ */

@@ -75,6 +75,9 @@ int main(int argc, char **argv){
     printf("\n\nPos ordem: ");
     arv_imprime_pos_ordem(raiz);
 
+    double resultado = arv_calcula(raiz);
+    printf("\n\nResultado: %.2f",resultado);
+
 	//pilha_insere( pilha, raiz );
 	pilha_destroi( pilha );
 
