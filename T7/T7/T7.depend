@@ -6,7 +6,7 @@
 	"arv.h"
 	"memo.h"
 
-1434077373 c:\users\brenda\documents\github\elc1067\t7\arv.h
+1434077835 c:\users\brenda\documents\github\elc1067\t7\arv.h
 	<stdbool.h>
 
 1433542247 c:\users\brenda\documents\github\elc1067\t7\memo.h
@@ -15,7 +15,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1434076290 source:c:\users\brenda\documents\github\elc1067\t7\principal.c
+1434077372 source:c:\users\brenda\documents\github\elc1067\t7\principal.c
 	<stdlib.h>
 	<stdbool.h>
 	<stdio.h>

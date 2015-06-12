@@ -82,7 +82,7 @@ int main(int argc, char **argv){
 	pilha_destroi( pilha );
 
 	/* destroi árvore */
-	raiz = arv_destroi( raiz );
+	arv_destroi( raiz );
 
     printf("\n\n");
 	memo_relatorio();

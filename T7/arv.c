@@ -63,13 +63,12 @@ void arv_imprime_pos_ordem(arv_t* arv){
 }
 
 /*  destroi toda a árvore */
-arv_t* arv_destroi(arv_t* arv){
+void arv_destroi(arv_t* arv){
     if (arv != NULL){
         arv_destroi(arv->esq);
         arv_destroi(arv->dir);
         memo_libera(arv);
     }
-    return NULL;
 }
 
 double arv_calcula(arv_t* arv){
@@ -88,5 +87,6 @@ double arv_calcula(arv_t* arv){
             return (valor2 * valor1);
         }
     }
+    return 0;
 }
 
