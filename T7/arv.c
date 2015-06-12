@@ -72,3 +72,21 @@ arv_t* arv_destroi(arv_t* arv){
     return NULL;
 }
 
+double calcula(arv_t* arv){
+    if(arv->dado.tipo == OPERANDO){
+        return arv->dado.u.operando;
+    }else{
+        double valor1 = calcula(arv->esq);
+        double valor2 = calcula(arv->esq);
+        if(arv->dado.u.operador == '+'){
+            return (valor1 + valor2);
+        }else if(arv->dado.u.operador == '-'){
+            return (valor1 - valor2);
+        }else if(arv->dado.u.operador == '/'){
+            return (valor1 / valor2);
+        }else if(arv->dado.u.operador == '*'){
+            return (valor1 * valor2);
+        }
+    }
+}
+
