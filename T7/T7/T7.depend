@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1434076382 source:c:\users\brenda\documents\github\elc1067\t7\arv.c
+1434077823 source:c:\users\brenda\documents\github\elc1067\t7\arv.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -15,7 +15,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1434077372 source:c:\users\brenda\documents\github\elc1067\t7\principal.c
+1434077823 source:c:\users\brenda\documents\github\elc1067\t7\principal.c
 	<stdlib.h>
 	<stdbool.h>
 	<stdio.h>

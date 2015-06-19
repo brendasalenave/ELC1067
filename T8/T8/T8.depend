@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1434586315 source:/home/karina/ELC1067/T8/memo.c
+	<stdio.h>
+	<stdlib.h>
+
+1434593232 source:/home/karina/ELC1067/T8/principal.c
+	<stdio.h>
+	"grafo.h"
+
+1434599048 source:/home/karina/ELC1067/T8/grafo.c
+	<stdio.h>
+	"grafo.h"
+	"memo.h"
+
+1434588880 /home/karina/ELC1067/T8/grafo.h
+	<stdlib.h>
+	<stdbool.h>
+	"vertice.h"
+	"lista.h"
+	"memo.h"
+
+1434586580 /home/karina/ELC1067/T8/vertice.h
+	<stdlib.h>
+	"lista.h"
+
+1434597183 /home/karina/ELC1067/T8/lista.h
+
+1434586315 /home/karina/ELC1067/T8/memo.h
+	<stdlib.h>
+
+1434597183 source:/home/karina/ELC1067/T8/lista.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"lista.h"
+	"memo.h"
+

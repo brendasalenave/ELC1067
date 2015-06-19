@@ -80,7 +80,7 @@ int main(int argc, char **argv){
 
 	//pilha_insere( pilha, raiz );
 	pilha_destroi( pilha );
-
+#
 	/* destroi árvore */
 	arv_destroi( raiz );
 
