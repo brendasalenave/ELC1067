@@ -4,7 +4,9 @@
 
 
 int main(){
-    printf("COMPILOU");
+    printf("COMPILOU\n\n");
 
+
+    memo_relatorio();
     return 0;
 }

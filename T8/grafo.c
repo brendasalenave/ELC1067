@@ -14,11 +14,9 @@ grafo_t* grafo_cria(void){
 
 /* insere um vértice no grafo */
 bool grafo_insere_vertice(grafo_t* g, vertice_t* v){
-    if(g != NULL){
-        g->vertices->vert = v;
-        return true;
-    }else
-        return false;
+    g->vertices = insereLista(g->vertices, v);
+    g->nvertices ++;
+    return true;
 }
 
 /* retorna um vértice associado a uma chave (usar strcmp) */
@@ -34,9 +32,14 @@ vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
  * adjacência (v1 na lista de v2, e v2 na lista de v1).
  */
 bool grafo_insere_aresta(grafo_t* g, char* v1, char* v2){
-    vertice_t* v1 = grafo_busca_vertice(g, v1);
-    vertice_t* v2 = grafo_busca_vertice(g, v2);
+    vertice_t* v01, v02;
+    v01 = grafo_busca_vertice(g, v1);
+    v02 = grafo_busca_vertice(g, v2);
 
+    v01->adjacentes = insereLista(v01->adjacentes, v02);
+    v02->adjacentes = insereLista(v02->adjacentes, v01);
+
+    return true;
 }
 
 /* função que imprime vértices e arestas conforme formato */
