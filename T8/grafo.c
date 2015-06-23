@@ -28,7 +28,7 @@ vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
     int i;
 
     for(g_l = g; g_l != NULL; g_l = g_l->vertices->prox){
-        for(p_l = g->vertices->vert; p_l != NULL; p_l = p_l->prox){
+        for(p_l = g->vertices->vert->adjacentes; p_l != NULL; p_l = p_l->prox){
             if((strcmp(p_l->vert->chave, chave)) == 0){
                 return g->vertices->vert;
             }
@@ -36,14 +36,6 @@ vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
     }
     return NULL;
 }
-
-/*lista_t* busca (lista_t* l, int v) {
-    lista_t* p;
-    for (p=l; p!=NULL; p=p->prox)
-    if (p->info == v)
-        return p;
-    return NULL; // não achou o elemento
- }*/
 
 /*
  * Insere uma aresta entre os vértices v1 e v2. Como o grafo
@@ -76,7 +68,7 @@ void grafo_destroi(grafo_t* g){
 
 }
 
-#ifdef 0
+/*
 // A utility function to print the adjacenncy list representation of graph
 void printGraph(struct Graph* graph)
 {
@@ -93,4 +85,4 @@ void printGraph(struct Graph* graph)
         printf("\n");
     }
 }
-#endif
+*/

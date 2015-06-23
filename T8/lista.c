@@ -21,13 +21,16 @@ int lista_vazia(lista_t* l){
 }
 
 
-/*lista_t* busca (lista_t* l, int v) {
+lista_t* lista_busca (lista_t* l, char* chave) {
     lista_t* p;
-    for (p=l; p!=NULL; p=p->prox)
-    if (p->info == v)
-        return p;
+    int r;
+    for (p=l; p!=NULL; p=p->prox){
+        r = strcmp(p->vert->chave, chave);
+        if(r==0)
+            return p;
+    }
     return NULL; // não achou o elemento
- }*/
+ }
 
 
 /*
