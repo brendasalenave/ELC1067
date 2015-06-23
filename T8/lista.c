@@ -20,6 +20,16 @@ int lista_vazia(lista_t* l){
     return (l==NULL);
 }
 
+
+/*lista_t* busca (lista_t* l, int v) {
+    lista_t* p;
+    for (p=l; p!=NULL; p=p->prox)
+    if (p->info == v)
+        return p;
+    return NULL; // não achou o elemento
+ }*/
+
+
 /*
 void imprimeLista(lista_t* lista){
     lista_t* p = lista;

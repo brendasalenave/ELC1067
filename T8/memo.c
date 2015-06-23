@@ -46,10 +46,10 @@ void memo_libera( void* ptr )
 
 void memo_relatorio( void )
 {
-	printf("\n** RELATÓRIO DE ALOCAÇÕES DE MEMÓRIA **\n");
-	printf(" * Alocações  : %ld (total de %lu bytes)\n", _memo_aloc, _memo_aloc_bytes );
-	printf(" * Liberações : %ld\n", _memo_free );
-	printf(" * Realocações: %lu bytes\n", _memo_realoc_bytes );
+	printf("\n** RELATORIO DE ALOCAÇÕES DE MEMORIA **\n");
+	printf(" * Alocacoes  : %ld (total de %lu bytes)\n", _memo_aloc, _memo_aloc_bytes );
+	printf(" * Liberacoes : %ld\n", _memo_free );
+	printf(" * Realocacoes: %lu bytes\n", _memo_realoc_bytes );
 	printf(" * SALDO      : %ld (alocações menos liberações)\n", _memo_aloc-_memo_free );
 	printf("\n");
 }
