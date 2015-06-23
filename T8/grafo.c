@@ -34,7 +34,8 @@ vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
  * adjacência (v1 na lista de v2, e v2 na lista de v1).
  */
 bool grafo_insere_aresta(grafo_t* g, char* v1, char* v2){
-
+    vertice_t* v1 = grafo_busca_vertice(g, v1);
+    vertice_t* v2 = grafo_busca_vertice(g, v2);
 
 }
 
