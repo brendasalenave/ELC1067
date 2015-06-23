@@ -28,11 +28,8 @@ vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
     int i;
 
     for(g_l = g; g_l != NULL; g_l = g_l->vertices->prox){
-        for(p_l = g->vertices->vert->adjacentes; p_l != NULL; p_l = p_l->prox){
-            if((strcmp(p_l->vert->chave, chave)) == 0){
-                return g->vertices->vert;
-            }
-        }
+
+
     }
     return NULL;
 }
