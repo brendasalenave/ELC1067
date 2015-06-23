@@ -1,5 +1,6 @@
 #ifndef _VERTICE_H_
 #define _VERTICE_H_
+
 /*
  * vertice.h
  * Definição da estrutura de dados vertice_t de grafo.
