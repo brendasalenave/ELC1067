@@ -11,9 +11,9 @@ lista_t* lista_inicializa(){
 
 /* insere no inicio da lista: retorna lista atualizada*/
 lista_t* insereLista(lista_t *l, struct vertice_t* vertice){
-    printf("entra na funcao insereLista");
+    //printf("entra na funcao insereLista");
     lista_t* novo = (lista_t*)memo_aloca(sizeof(lista_t));
-    printf("\nalocou novo elemento\n");
+    //printf("\nalocou novo elemento\n");
     novo->vert = vertice;
     novo->prox = l;
     return novo;

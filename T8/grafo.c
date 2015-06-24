@@ -16,23 +16,26 @@ grafo_t* grafo_cria(void){
 
 /* insere um vértice no grafo */
 bool grafo_insere_vertice(grafo_t* g, vertice_t* v){
-    printf("\nentra na funcao\n");
+    //printf("\nentra na funcao\n");
     g->vertices = insereLista(g->vertices, v);
-    printf("insere na lista");
+    //printf("insere na lista");
     g->nvertices ++;
     return true;
 }
 
 vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
-	  lista_t* p = g->vertices; //lista auxiliar para percorrer a lista de vertices
-	  vertice_t* v;
-	  while (p != NULL){
-		  v = p->vert;
-		  if (strcmp(v->chave,chave) == 0) return p->vert;
-		  else p = p->prox;
-	  }
-	  return NULL;
+    lista_t* p = g->vertices; //lista auxiliar para percorrer a lista de vertices
+	vertice_t* v;
+	while (p != NULL){
+        v = p->vert;
+		if (strcmp(v->chave,chave) == 0)
+            return p->vert;
+        else p = p->prox;
+    }
+	printf("vertice nao encontrado");
+	return NULL;
 }
+
 
 /*
  * Insere uma aresta entre os vértices v1 e v2. Como o grafo
@@ -42,6 +45,7 @@ vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
  */
 bool grafo_insere_aresta(grafo_t* g, char* v1, char* v2){
     vertice_t* v01 = grafo_busca_vertice(g, v1);
+    if(v01 != NULL) printf("buscou primeiro vertice");
     vertice_t* v02 = grafo_busca_vertice(g, v2);
 
     v01->adjacentes = insereLista(v01->adjacentes, v02);
@@ -52,7 +56,10 @@ bool grafo_insere_aresta(grafo_t* g, char* v1, char* v2){
 
 /* função que imprime vértices e arestas conforme formato */
 void grafo_imprime(grafo_t* g){
+    int i;
+    for(i = 0; i < g->nvertices; i++){
 
+    }
 }
 
 /* destroi e libera memória de um grafo */
@@ -61,6 +68,7 @@ void grafo_destroi(grafo_t* g){
     vertice_t* v;
 	  while (p != NULL){
 		  v = p->vert;
+		  liberaLista(v->adjacentes);
 		  memo_libera(v);
 		  p = p->prox;
 	  }

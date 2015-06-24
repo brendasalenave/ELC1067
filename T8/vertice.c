@@ -5,6 +5,10 @@
 
 vertice_t* vertice_cria(char* nome, char* chave){
     vertice_t* v = (vertice_t*)memo_aloca(sizeof(vertice_t));
+
+    v->nome = (char*)memo_aloca(30*sizeof(char));
+    v->chave = (char*)memo_aloca(5*sizeof(char));
+
     strcpy(v->nome,nome);
     strcpy(v->chave,chave);
     v->adjacentes = NULL;

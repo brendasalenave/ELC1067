@@ -19,37 +19,39 @@ int main(){
         char c;
         char* nome = (char*)memo_aloca(30*sizeof(char));
         char* chave = (char*)memo_aloca(4*sizeof(char));
+        char* chave2 = (char*)memo_aloca(4*sizeof(char));
+
 
         int nVertices = 0;
         int nArestas = 0;
         int i, k;
 
         while(feof(f) == 0){
-            //fflush(stdin);
+            bool tmp;
             if(fscanf(f,"%d %d", &nVertices, &nArestas) < 0)
                 break;
 
             printf("\nNUMERO DE VERTICES: %d", nVertices);
-            printf("\nNUMERO DE ARESTAS: %d\n\n", nArestas);
+            printf("\nNUMERO DE ARESTAS: %d\n", nArestas);
             //break;
+
+            while(c != '\n'){  //avança até nova linha
+                    c = fgetc(f);
+            }
 
             for(k = 0; k < nVertices; k++){
                 fflush(stdin);
 
                 i = 0;
-                c = fgetc(f);
-                while(c != '\n'){  //avança até nova linha
-                    c = fgetc(f);
-                }
-
-                do{
-                    c = fgetc(f);
+                while(c != ' '){
                     chave[i] = c;
                     i++;
-                }while(c != ' ');
-                    chave[i] = '\0';
+                    c = fgetc(f);
+                }
+                chave[i] = '\0';
 
                 i = 0;
+                c = fgetc(f);
                 while(c != '\n'){
                     nome[i] = c;
                     c = fgetc(f);
@@ -57,19 +59,45 @@ int main(){
                 }
                 nome[i] = '\0';
 
-                printf("%s %s\n", chave, nome);
+                c = fgetc(f);
+
+                printf("%s-%s\n", chave, nome);
                 v = vertice_cria(nome, chave);
-                printf("CHEGA AQUI");
-                bool tmp = grafo_insere_vertice(g, v);
+                tmp = grafo_insere_vertice(g, v);
             }
-            break;
+
+            for(k = 0; k < nArestas; k++){
+                fflush(stdin);
+
+                i = 0;
+
+                while(c != ' '){
+                    chave[i] = c;
+                    i++;
+                    c = fgetc(f);
+                }
+                chave[i] = '\0';
+
+                i = 0;
+                c = fgetc(f);
+                while(c != '\n'){
+                    if(c!=' ')chave2[i] = c;
+                    else chave2[i] = '\0';
+                    c = fgetc(f);
+                    if((k == 8)) break;
+                    i++;
+                }
+                printf("%s %s", chave, chave2);
+                //tmp = grafo_insere_aresta(g, chave, chave2);
+            }
+            //break;
         }
         grafo_destroi(g);
         memo_libera(nome);
         memo_libera(chave);
     }
 
-
+    printf("\n");
     memo_relatorio();
     return 0;
 }
