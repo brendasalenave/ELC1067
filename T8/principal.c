@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "grafo.h"
+#include "vertice.h"
 
 
 int main(){
@@ -13,6 +14,7 @@ int main(){
 
     }else{
         grafo_t* g = grafo_cria();
+        vertice_t* v = NULL;
 
         char c;
         char* nome = (char*)memo_aloca(30*sizeof(char));
@@ -26,41 +28,39 @@ int main(){
             //fflush(stdin);
             if(fscanf(f,"%d %d", &nVertices, &nArestas) < 0)
                 break;
-            fflush(stdin);
 
             printf("\nNUMERO DE VERTICES: %d", nVertices);
             printf("\nNUMERO DE ARESTAS: %d\n\n", nArestas);
             //break;
 
             for(k = 0; k < nVertices; k++){
+                fflush(stdin);
+
                 i = 0;
                 c = fgetc(f);
                 while(c != '\n'){  //avança até nova linha
                     c = fgetc(f);
-                    fflush(stdin);
                 }
 
                 do{
                     c = fgetc(f);
-                    fflush(stdin);
                     chave[i] = c;
                     i++;
                 }while(c != ' ');
                     chave[i] = '\0';
 
-                //while(c == ' '){ //avança até a proxima palavra
-                //    c = fgetc(f);
-                //}
                 i = 0;
                 while(c != '\n'){
                     nome[i] = c;
                     c = fgetc(f);
-                    fflush(stdin);
                     i++;
                 }
                 nome[i] = '\0';
 
-                printf("\n%s %s\n", chave, nome);
+                printf("%s %s\n", chave, nome);
+                //v = vertice_cria(nome, chave);
+                //printf("CHEGA AQUI");
+                //bool tmp = grafo_insere_vertice(g, v);
             }
             break;
         }

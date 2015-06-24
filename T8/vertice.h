@@ -16,4 +16,6 @@ typedef struct vertice {
 	lista_t* adjacentes; /* lista com os vértices adjacentes (vizinhos) */
 } vertice_t;
 
+vertice_t* vertice_cria(char* nome, char* chave);
+
 #endif /* _VERTICE_H_ */

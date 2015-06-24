@@ -51,9 +51,10 @@
 	<stdio.h>
 	<stdlib.h>
 
-1435114114 source:c:\users\brenda\documents\github\elc1067\t8\principal.c
+1435116128 source:c:\users\brenda\documents\github\elc1067\t8\principal.c
 	<stdio.h>
 	"grafo.h"
+	"vertice.h"
 
 1434588880 c:\users\brenda\documents\github\elc1067\t8\grafo.h
 	<stdlib.h>
@@ -62,7 +63,7 @@
 	"lista.h"
 	"memo.h"
 
-1435083734 c:\users\brenda\documents\github\elc1067\t8\vertice.h
+1435115957 c:\users\brenda\documents\github\elc1067\t8\vertice.h
 	<stdlib.h>
 	"lista.h"
 
