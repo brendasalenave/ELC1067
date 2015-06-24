@@ -23,6 +23,7 @@ int main(){
         int i = 0;
 
         while(feof(f) == 0){
+            //fflush(stdin);
             if(fscanf(f,"%d %d", &nVertices, &nArestas) < 0)
                 break;
 
@@ -45,16 +46,14 @@ int main(){
             //    c = fgetc(f);
             //}
             i = 0;
-            do{
-                c = fgetc(f);
-                nome[i] = c;
-                i++;
-            }while(c != ' ');
+            fflush(stdin);
+            while(c != '\n'){
+            nome[i] = c;
+            c = fgetc(f);
+            i++;
+        }
 
-
-            //fscanf(f,"%s", &chave);
-
-            printf("\n%s  %s", chave, nome);
+            printf("\n%s  %s\n", chave, nome);
             break;
 
         }
