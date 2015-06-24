@@ -10,6 +10,7 @@ typedef struct lista{
     struct lista *prox;
 }lista_t;
 
+lista_t* lista_inicializa();
 int lista_vazia(lista_t* l);
 lista_t* insereLista(lista_t *l, struct vertice_t* vertice);
 lista_t* lista_busca(lista_t* l, char* chave);

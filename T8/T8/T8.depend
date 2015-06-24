@@ -35,14 +35,14 @@
 	"lista.h"
 	"memo.h"
 
-1435107516 source:c:\users\brenda\documents\github\elc1067\t8\lista.c
+1435148994 source:c:\users\brenda\documents\github\elc1067\t8\lista.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 	"lista.h"
 	"memo.h"
 
-1435102017 c:\users\brenda\documents\github\elc1067\t8\lista.h
+1435149760 c:\users\brenda\documents\github\elc1067\t8\lista.h
 
 1434586314 c:\users\brenda\documents\github\elc1067\t8\memo.h
 	<stdlib.h>
@@ -51,7 +51,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1435116128 source:c:\users\brenda\documents\github\elc1067\t8\principal.c
+1435148566 source:c:\users\brenda\documents\github\elc1067\t8\principal.c
 	<stdio.h>
 	"grafo.h"
 	"vertice.h"
@@ -67,7 +67,7 @@
 	<stdlib.h>
 	"lista.h"
 
-1435107744 source:c:\users\brenda\documents\github\elc1067\t8\grafo.c
+1435148722 source:c:\users\brenda\documents\github\elc1067\t8\grafo.c
 	<stdio.h>
 	<string.h>
 	"grafo.h"

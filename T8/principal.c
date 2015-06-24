@@ -58,9 +58,9 @@ int main(){
                 nome[i] = '\0';
 
                 printf("%s %s\n", chave, nome);
-                //v = vertice_cria(nome, chave);
-                //printf("CHEGA AQUI");
-                //bool tmp = grafo_insere_vertice(g, v);
+                v = vertice_cria(nome, chave);
+                printf("CHEGA AQUI");
+                bool tmp = grafo_insere_vertice(g, v);
             }
             break;
         }

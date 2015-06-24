@@ -9,14 +9,16 @@
 grafo_t* grafo_cria(void){
     grafo_t* g = (grafo_t*)memo_aloca(sizeof(grafo_t));
     g->nvertices = 0;
-    g->vertices = NULL;
+    g->vertices = lista_inicializa();
 
     return g;
 }
 
 /* insere um vértice no grafo */
 bool grafo_insere_vertice(grafo_t* g, vertice_t* v){
+    printf("\nentra na funcao\n");
     g->vertices = insereLista(g->vertices, v);
+    printf("insere na lista");
     g->nvertices ++;
     return true;
 }
