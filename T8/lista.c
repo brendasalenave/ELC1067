@@ -21,11 +21,12 @@ int lista_vazia(lista_t* l){
 }
 
 
-lista_t* lista_busca (lista_t* l, char* chave) {
+lista_t* lista_busca(lista_t* l, char* chave) {
     lista_t* p;
     int r;
     for (p=l; p!=NULL; p=p->prox){
-        if(strcmp(p->vert->chave, chave) == 0)
+        r = strcmp(p->vert->chave, chave);
+        if(r==0)
             return p;
     }
     return NULL; // não achou o elemento

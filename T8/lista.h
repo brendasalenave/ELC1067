@@ -12,7 +12,7 @@ typedef struct lista{
 
 int lista_vazia(lista_t* l);
 lista_t* insereLista(lista_t *l, struct vertice_t* vertice);
-lista_t* lista_busca (lista_t* l, char* chave);
+lista_t* lista_busca(lista_t* l, char* chave);
 void imprimeLista(lista_t* lista);
 void liberaLista(lista_t *l);
 
