@@ -20,19 +20,6 @@ int lista_vazia(lista_t* l){
     return (l==NULL);
 }
 
-
-lista_t* lista_busca(lista_t* l, char* chave) {
-    lista_t* p;
-    int r;
-    for (p=l; p!=NULL; p=p->prox){
-        r = strcmp(p->vert->chave, chave);
-        if(r==0)
-            return p;
-    }
-    return NULL; // não achou o elemento
- }
-
-
 /*
 void imprimeLista(lista_t* lista){
     lista_t* p = lista;

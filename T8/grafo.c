@@ -21,17 +21,15 @@ bool grafo_insere_vertice(grafo_t* g, vertice_t* v){
     return true;
 }
 
-/* retorna um vértice associado a uma chave (usar strcmp) */
 vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
-    lista_t* p_l;
-    grafo_t* g_l;
-    int i;
-
-    for(g_l = g; g_l != NULL; g_l = g_l->vertices->prox){
-
-
-    }
-    return NULL;
+	  lista_t* p = g->vertices; //lista auxiliar para percorrer a lista de vertices
+	  vertice_t* v;
+	  while (p != NULL){
+		  v = p->vert;
+		  if (strcmp(v->chave,chave) == 0) return p->vert;
+		  else p = p->prox;
+	  }
+	  return NULL;
 }
 
 /*
@@ -57,18 +55,19 @@ void grafo_imprime(grafo_t* g){
 
 /* destroi e libera memória de um grafo */
 void grafo_destroi(grafo_t* g){
-    int i;
-
-    for(i = 0; i < g->nvertices; i++)
-        //libera vertice a vertice
+    lista_t* p = g->vertices; //lista auxiliar para percorrer a lista de vertices
+    vertice_t* v;
+	  while (p != NULL){
+		  v = p->vert;
+		  memo_libera(v);
+		  p = p->prox;
+	  }
     memo_libera(g);
-
 }
 
 /*
 // A utility function to print the adjacenncy list representation of graph
-void printGraph(struct Graph* graph)
-{
+void printGraph(struct Graph* graph){
     int v;
     for (v = 0; v < graph->V; ++v)
     {
