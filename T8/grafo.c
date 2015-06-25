@@ -16,9 +16,7 @@ grafo_t* grafo_cria(void){
 
 /* insere um vértice no grafo */
 bool grafo_insere_vertice(grafo_t* g, vertice_t* v){
-    //printf("\nentra na funcao\n");
     g->vertices = insereLista(g->vertices, v);
-    //printf("insere na lista");
     g->nvertices ++;
     return true;
 }
@@ -32,7 +30,6 @@ vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
             return p->vert;
         else p = p->prox;
     }
-	printf("vertice nao encontrado");
 	return NULL;
 }
 
@@ -44,9 +41,14 @@ vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
  * adjacência (v1 na lista de v2, e v2 na lista de v1).
  */
 bool grafo_insere_aresta(grafo_t* g, char* v1, char* v2){
+
     vertice_t* v01 = grafo_busca_vertice(g, v1);
-    if(v01 != NULL) printf("buscou primeiro vertice");
     vertice_t* v02 = grafo_busca_vertice(g, v2);
+
+    if((v01 == NULL) || (v02 == NULL)){
+      printf("erro ao buscar vertices");
+      return false;
+    }
 
     v01->adjacentes = insereLista(v01->adjacentes, v02);
     v02->adjacentes = insereLista(v02->adjacentes, v01);

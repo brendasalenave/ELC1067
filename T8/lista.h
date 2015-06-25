@@ -6,8 +6,8 @@
 typedef struct vertice_t vertice;
 
 typedef struct lista{
-    struct vertice_t* vert;
-    struct lista *prox;
+    struct vertice_t* vert;   //vertice
+    struct lista *prox;       // referência para próximo elemento da lista
 }lista_t;
 
 lista_t* lista_inicializa();

@@ -18,8 +18,8 @@ int main(){
 
         char c;
         char* nome = (char*)memo_aloca(30*sizeof(char));
-        char* chave = (char*)memo_aloca(4*sizeof(char));
-        char* chave2 = (char*)memo_aloca(4*sizeof(char));
+        char* chave = (char*)memo_aloca(5*sizeof(char));
+        char* chave2 = (char*)memo_aloca(5*sizeof(char));
 
 
         int nVertices = 0;
@@ -33,7 +33,6 @@ int main(){
 
             printf("\nNUMERO DE VERTICES: %d", nVertices);
             printf("\nNUMERO DE ARESTAS: %d\n", nArestas);
-            //break;
 
             while(c != '\n'){  //avança até nova linha
                     c = fgetc(f);
@@ -87,14 +86,16 @@ int main(){
                     if((k == 8)) break;
                     i++;
                 }
-                printf("%s %s", chave, chave2);
-                //tmp = grafo_insere_aresta(g, chave, chave2);
+                printf("%s %s  ", chave, chave2);
+                tmp = grafo_insere_aresta(g, chave, chave2);
             }
             //break;
         }
         grafo_destroi(g);
         memo_libera(nome);
         memo_libera(chave);
+        memo_libera(chave2);
+
     }
 
     printf("\n");
