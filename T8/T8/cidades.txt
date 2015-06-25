@@ -4,8 +4,8 @@ POA Porto Alegre
 SC Santa Cruz
 CH Cidade Hipotetica
 CH1 Outra Cidade
-PF Passo Fundo
-CS Caxias do Sul
+PF Passo Fundo  
+CS Caxias do Sul  
 FS Faxinal do Soturno
 SMA POA  
 SMA SC  

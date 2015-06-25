@@ -85,8 +85,12 @@ bool grafo_insere_aresta(grafo_t* g, char* v1, char* v2){
 /* função que imprime vértices e arestas conforme formato */
 void grafo_imprime(grafo_t* g){
     int i;
+    lista_t* p = g->vertices;
+    printf("\n\n");
     for(i = 0; i < g->nvertices; i++){
-
+        printf("\n%s ->",p->vert->chave);
+        imprimeLista(p->vert->adjacentes);
+        p = p->prox;
     }
 }
 

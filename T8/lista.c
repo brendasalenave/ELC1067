@@ -28,7 +28,7 @@ void imprimeLista(lista_t* lista){
     if(p == NULL)
         printf("lista vazia");
     while(p != NULL){
-        printf("%s\n", p->vert->chave);
+        printf("'%s' ", p->vert->chave);
         p = p->prox;
     }
 }
