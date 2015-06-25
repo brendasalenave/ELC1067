@@ -16,11 +16,12 @@ grafo_t* grafo_cria(void){
 
 /* insere um vértice no grafo */
 bool grafo_insere_vertice(grafo_t* g, vertice_t* v){
-    g->vertices = insereLista(g->vertices, v);
+    g->vertices = lista_insere(g->vertices, v);
+    if(g->vertices == NULL) return false;
     g->nvertices ++;
     return true;
 }
-
+/*
 vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
     lista_t* p = g->vertices; //lista auxiliar para percorrer a lista de vertices
 	vertice_t* v;
@@ -31,8 +32,33 @@ vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
         else p = p->prox;
     }
 	return NULL;
+}*/
+
+vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
+	  lista_t* l = g->vertices;
+	  vertice_t* v;
+	  while (l != NULL){
+		  v = l->vert;
+		  //printf("'%s' -> '%s'\n", v->chave, chave);
+		  if (strcmp(v->chave,chave) == 0){
+			 return l->vert;
+		  }
+		  else
+			 l = l->prox;
+	  }
+	  return NULL;
 }
 
+/*vertice_t* grafo_busca_vertice(grafo_t* g, char* chave){
+    lista_t* p;
+    vertice_t* v;
+    for(p = g->vertices; p != NULL; p = p->prox){
+            v = p->vert;
+            if((strcmp(v->chave, chave)) == 0){
+                return p->vert;
+        }
+    }
+}*/
 
 /*
  * Insere uma aresta entre os vértices v1 e v2. Como o grafo
@@ -50,8 +76,8 @@ bool grafo_insere_aresta(grafo_t* g, char* v1, char* v2){
       return false;
     }
 
-    v01->adjacentes = insereLista(v01->adjacentes, v02);
-    v02->adjacentes = insereLista(v02->adjacentes, v01);
+    v01->adjacentes = lista_insere(v01->adjacentes, v02);
+    v02->adjacentes = lista_insere(v02->adjacentes, v01);
 
     return true;
 }
@@ -70,27 +96,10 @@ void grafo_destroi(grafo_t* g){
     vertice_t* v;
 	  while (p != NULL){
 		  v = p->vert;
-		  liberaLista(v->adjacentes);
-		  memo_libera(v);
+		  lista_libera(v->adjacentes);
+		  //memo_libera(v);
 		  p = p->prox;
 	  }
+	  lista_libera(g->vertices);
     memo_libera(g);
 }
-
-/*
-// A utility function to print the adjacenncy list representation of graph
-void printGraph(struct Graph* graph){
-    int v;
-    for (v = 0; v < graph->V; ++v)
-    {
-        struct AdjListNode* pCrawl = graph->array[v].head;
-        printf("\n Adjacency list of vertex %d\n head ", v);
-        while (pCrawl)
-        {
-            printf("-> %d", pCrawl->dest);
-            pCrawl = pCrawl->next;
-        }
-        printf("\n");
-    }
-}
-*/

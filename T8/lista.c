@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "lista.h"
+#include "vertice.h"
 #include "memo.h"
 
 lista_t* lista_inicializa(){
@@ -10,7 +11,7 @@ lista_t* lista_inicializa(){
 }
 
 /* insere no inicio da lista: retorna lista atualizada*/
-lista_t* insereLista(lista_t *l, struct vertice_t* vertice){
+lista_t* lista_insere(lista_t *l, struct vertice* vertice){
     lista_t* novo = (lista_t*)memo_aloca(sizeof(lista_t));
     novo->vert = vertice;
     novo->prox = l;
@@ -21,21 +22,21 @@ int lista_vazia(lista_t* l){
     return (l==NULL);
 }
 
-/*
+
 void imprimeLista(lista_t* lista){
     lista_t* p = lista;
     if(p == NULL)
         printf("lista vazia");
     while(p != NULL){
-        printf("%s\n", p->str);
+        printf("%s\n", p->vert->chave);
         p = p->prox;
     }
 }
-*/
 
-void liberaLista(lista_t* l){
+
+void lista_libera(lista_t* l){
     if(!lista_vazia(l)){
-        liberaLista(l->prox);
+        lista_libera(l->prox);
         memo_libera(l);
     }
 }

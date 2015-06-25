@@ -2,6 +2,7 @@
 
 #include "grafo.h"
 #include "vertice.h"
+#include "memo.h"
 
 
 int main(){
@@ -14,7 +15,7 @@ int main(){
 
     }else{
         grafo_t* g = grafo_cria();
-        vertice_t* v = NULL;
+        vertice_t* v = vertice_cria();
 
         char c;
         char* nome = (char*)memo_aloca(30*sizeof(char));
@@ -42,6 +43,7 @@ int main(){
                 fflush(stdin);
 
                 i = 0;
+                c =  fgetc(f);
                 while(c != ' '){
                     chave[i] = c;
                     i++;
@@ -58,18 +60,20 @@ int main(){
                 }
                 nome[i] = '\0';
 
-                c = fgetc(f);
+                //c = fgetc(f);
 
-                printf("%s-%s\n", chave, nome);
-                v = vertice_cria(nome, chave);
+                printf("'%s' - '%s'\n", chave, nome);
+                v = vertice_cria();
+                v = vertice_insere(v, nome, chave);
                 tmp = grafo_insere_vertice(g, v);
+                if(tmp == false) printf ("opa, deu bosta aqui");
             }
 
             for(k = 0; k < nArestas; k++){
                 fflush(stdin);
 
                 i = 0;
-
+                c = fgetc(f);
                 while(c != ' '){
                     chave[i] = c;
                     i++;
@@ -86,12 +90,13 @@ int main(){
                     if((k == 8)) break;
                     i++;
                 }
-                printf("%s %s  ", chave, chave2);
+                printf("'%s' '%s'  \n", chave, chave2);
                 tmp = grafo_insere_aresta(g, chave, chave2);
             }
             //break;
         }
         grafo_destroi(g);
+        vertice_libera(v);
         memo_libera(nome);
         memo_libera(chave);
         memo_libera(chave2);
@@ -100,5 +105,6 @@ int main(){
 
     printf("\n");
     memo_relatorio();
+
     return 0;
 }
