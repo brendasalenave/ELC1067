@@ -35,7 +35,7 @@
 	"lista.h"
 	"memo.h"
 
-1435269392 source:c:\users\brenda\documents\github\elc1067\t8\lista.c
+1435316819 source:c:\users\brenda\documents\github\elc1067\t8\lista.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -52,7 +52,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1435273207 source:c:\users\brenda\documents\github\elc1067\t8\principal.c
+1435273266 source:c:\users\brenda\documents\github\elc1067\t8\principal.c
 	<stdio.h>
 	"grafo.h"
 	"vertice.h"

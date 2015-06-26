@@ -101,7 +101,7 @@ void grafo_destroi(grafo_t* g){
 	  while (p != NULL){
 		  v = p->vert;
 		  lista_libera(v->adjacentes);
-		  //memo_libera(v);
+		  vertice_libera(v);
 		  p = p->prox;
 	  }
 	  lista_libera(g->vertices);
