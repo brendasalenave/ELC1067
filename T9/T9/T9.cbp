@@ -50,6 +50,9 @@
 		<Unit filename="../principal.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../vertice.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../vertice.h" />
 		<Unit filename="fila.h" />
 		<Extensions>
