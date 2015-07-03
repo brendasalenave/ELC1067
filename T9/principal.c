@@ -98,7 +98,7 @@ int main(){
         }
 
         grafo_imprime(g);
-        grafo_caminho_curto(g,"POA","FS");
+        grafo_caminho_curto(g,"SMA","CH1");
         grafo_destroi(g);
         //vertice_libera(v);
         memo_libera(nome);

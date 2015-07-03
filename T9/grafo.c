@@ -92,14 +92,13 @@ void grafo_caminho_curto(grafo_t* G, char* fonte, char* destino){
       printf("erro ao buscar vertices");
       return;
     }
-    printf("\n\n '%s' '%s'\n\n", fonte, destino);
 
     if(s == v){
         printf("%s ", s->nome);
         return;
 
     }if(v->ant == NULL){
-        printf("Nao existe caminho de %s a %s\n", s->nome, v->nome);
+        printf("\n\nNao existe caminho de %s a %s\n", s->nome, v->nome);
     }else {
         grafo_caminho_curto( G, fonte, v->ant->chave );
         printf("%s ", v->nome);

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1435949817 source:c:\users\brenda\documents\github\elc1067\t9\grafo.c
+1435951842 source:c:\users\brenda\documents\github\elc1067\t9\grafo.c
 	<stdio.h>
 	<string.h>
 	"grafo.h"
@@ -35,7 +35,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1435949337 source:c:\users\brenda\documents\github\elc1067\t9\principal.c
+1435952200 source:c:\users\brenda\documents\github\elc1067\t9\principal.c
 	<stdio.h>
 	"grafo.h"
 	"vertice.h"
@@ -49,7 +49,7 @@
 1435947849 c:\users\brenda\documents\github\elc1067\t9\fila.h
 	"vertice.h"
 
-1435271602 source:c:\users\brenda\documents\github\elc1067\t9\vertice.c
+1435952060 source:c:\users\brenda\documents\github\elc1067\t9\vertice.c
 	<string.h>
 	"vertice.h"
 	"memo.h"
