@@ -46,4 +46,7 @@ typedef struct vertice {
 	struct vertice* ant; /* antecessor deste vértice (usado na busca em largura) */
 } vertice_t;
 
+vertice_t* vertice_cria();
+void vertice_libera(vertice_t* vertice);
+
 #endif /* _VERTICE_H_ */

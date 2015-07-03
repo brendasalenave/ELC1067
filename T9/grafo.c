@@ -3,6 +3,7 @@
 
 #include "grafo.h"
 #include "lista.h"
+#include "fila.h"
 #include "memo.h"
 
 /* cria um grafo vazio */
@@ -59,35 +60,47 @@ bool grafo_insere_aresta(grafo_t* g, char* v1, char* v2){
     return true;
 }
 
-grafo_busca_largura(grafo_t* G, vertice_t* s){
+vertice_t* grafo_busca_largura(grafo_t* G, vertice_t* s){
     fila_t* Q;
-    inicializa todos vertices do grafo G com cor BRANCO;
+    vertice_t* u;
+    lista_t* p;
+
+    //inicializa todos vertices do grafo G com cor BRANCO;
     Q = fila_cria();
-    Q = fila_insere(Q, s);   // insere a fonte no final da fila
+    fila_insere(Q, s);   // insere a fonte no final da fila
     while(fila_vazia(Q) == false){
         u = fila_remove(Q);  // remove o primeiro da fila
-        for( cada vertice adjacente v de u ) {
-            if(v->cor == BRANCO){
-                v->cor = CINZA;  // marca como descoberto
-                v->d = u->d + 1; // distancia do antecessor para este vertice
-                v->ant = u;      // antecessor do vertice v
-                Q = fila_insere(Q, v);
+        for(p=u->adjacentes; p!=NULL; p=p->prox) { //cada vertice adjacente v de u
+
+            if(p->vert->cor == BRANCO){
+                p->vert->cor = CINZA;  // marca como descoberto
+                p->vert->distancia = u->distancia + 1; // distancia do antecessor para este vertice
+                p->vert->ant = u;      // antecessor do vertice v
+                fila_insere(Q, p->vert);
             }
         }
         u->cor = PRETO; // visitou vertices adjacentes
     }
+    return NULL;
 }
 
-grafo_caminho_curto(grafo_t* G, char* fonte, char* destino){
+void grafo_caminho_curto(grafo_t* G, char* fonte, char* destino){
     vertice_t* s = grafo_busca_vertice(G, fonte);
     vertice_t* v = grafo_busca_vertice(G, destino);
+
+    if((s == NULL) || (v == NULL)){
+      printf("erro ao buscar vertices");
+      return;
+    }
+    printf("\n\n '%s' '%s'\n\n", fonte, destino);
+
     if(s == v){
         printf("%s ", s->nome);
         return;
-    }
-    if(v->ant == NULL){
+
+    }if(v->ant == NULL){
         printf("Nao existe caminho de %s a %s\n", s->nome, v->nome);
-    } else {
+    }else {
         grafo_caminho_curto( G, fonte, v->ant->chave );
         printf("%s ", v->nome);
     }

@@ -5,6 +5,7 @@
 
 fila_t* fila_cria(void){
     fila_t* f = (fila_t*)memo_aloca(sizeof(fila_t));
+    f->ini->vertice->cor = BRANCO;
     f->ini = f->fim = NULL;
 
     return f;
@@ -33,7 +34,8 @@ void fila_insere(fila_t* f, vertice_t* v) {
         f->ini = f->fim;
 }
 
-/*vertice_t* fila_remove(fila_t* f) {
+
+vertice_t* fila_remove(fila_t* f) {
     vertice_t* v;
     if (fila_vazia(f)) {
         printf("fila vazia.\n");
@@ -45,7 +47,7 @@ void fila_insere(fila_t* f, vertice_t* v) {
         f->fim = NULL;
     return v;
 }
-*/
+
 
 int fila_vazia(fila_t* f) {
     return (f->ini==NULL);

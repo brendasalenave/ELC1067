@@ -96,7 +96,9 @@ int main(){
                 tmp = grafo_insere_aresta(g, chave, chave2);
             }
         }
+
         grafo_imprime(g);
+        grafo_caminho_curto(g,"POA","FS");
         grafo_destroi(g);
         //vertice_libera(v);
         memo_libera(nome);

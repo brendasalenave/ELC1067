@@ -36,6 +36,8 @@ vertice_t* grafo_busca_vertice(grafo_t* g, char* chave);
  */
 bool grafo_insere_aresta(grafo_t* g, char* v1, char* v2);
 
+void grafo_caminho_curto(grafo_t* G, char* fonte, char* destino);
+
 /* função que imprime vértices e arestas conforme formato */
 void grafo_imprime(grafo_t* g);
 
