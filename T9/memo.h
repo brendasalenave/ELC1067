@@ -1,23 +1,23 @@
-#ifndef _VERTICE_H_
-#define _VERTICE_H_
+#ifndef _MEMO_H_
+#define _MEMO_H_
 /*
- * vertice.h
- * Definição da estrutura de dados vertice_t de grafo.
+ * memo.h
+ * Funções para alocação de memória.
  *
  * The MIT License (MIT)
- *
- * Copyright (c) 2015 João V. F. Lima, UFSM
- *
+ * 
+ * Copyright (c) 2014, 2015 João V. F. Lima, UFSM
+ * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * 
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- *
+ * 
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -28,22 +28,17 @@
  */
 
 #include <stdlib.h>
-#include "lista.h"
 
-typedef enum {
-    BRANCO,
-    CINZA,
-    PRETO
-} cor_t;
+/* Aloca 'tam' bytes de memória */
+void* memo_aloca( size_t tam );
 
-/* tipo vertice inserido na lista */
-typedef struct vertice {
-	char* chave;         /* chave identificador */
-	char* nome;          /* nome do vértice */
-	lista_t* adjacentes; /* lista com os vértices adjacentes (vizinhos) */
-	cor_t cor;           /* cor do vértice (usado na busca em largura) */
-	int   distancia;     /* distância do antecessor para este vértice */
-	struct vertice* ant; /* antecessor deste vértice (usado na busca em largura) */
-} vertice_t;
+/* Realoca o ponteiro 'ptr' e retorna um novo vetor de tamanho 'tam' bytes */
+void* memo_realoca( void* ptr, size_t tam );
 
-#endif /* _VERTICE_H_ */
+/* Libera o ponteiro 'ptr' */
+void memo_libera( void* ptr );
+
+/* Imprime no terminal um relatório de alocações e liberações */
+void memo_relatorio( void );
+
+#endif /* _MEMO_H_ */

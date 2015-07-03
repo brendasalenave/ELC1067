@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1435316879 source:c:\users\brenda\documents\github\elc1067\t9\grafo.c
+	<stdio.h>
+	<string.h>
+	"grafo.h"
+	"lista.h"
+	"memo.h"
+
+1434588880 c:\users\brenda\documents\github\elc1067\t9\grafo.h
+	<stdlib.h>
+	<stdbool.h>
+	"vertice.h"
+	"lista.h"
+	"memo.h"
+
+1435327927 c:\users\brenda\documents\github\elc1067\t9\vertice.h
+	<stdlib.h>
+	"lista.h"
+
+1435259675 c:\users\brenda\documents\github\elc1067\t9\lista.h
+
+1434586314 c:\users\brenda\documents\github\elc1067\t9\memo.h
+	<stdlib.h>
+
+1435316819 source:c:\users\brenda\documents\github\elc1067\t9\lista.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"lista.h"
+	"vertice.h"
+	"memo.h"
+
+1435099081 source:c:\users\brenda\documents\github\elc1067\t9\memo.c
+	<stdio.h>
+	<stdlib.h>
+
+1435273266 source:c:\users\brenda\documents\github\elc1067\t9\principal.c
+	<stdio.h>
+	"grafo.h"
+	"vertice.h"
+	"memo.h"
+
+1435329376 source:c:\users\brenda\documents\github\elc1067\t9\fila.c
+	<stdio.h>
+	"fila.h"
+	"memo.h"
+
+1435329376 c:\users\brenda\documents\github\elc1067\t9\fila.h
+	"vertice.h"
+
