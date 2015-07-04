@@ -60,15 +60,10 @@ int main(){
                 }
                 nome[i] = '\0';
 
-                //c = fgetc(f);
-
                 printf("'%s' - '%s'\n", chave, nome);
                 vertice_t* v = vertice_cria();
                 v = vertice_insere(v, nome, chave);
                 tmp = grafo_insere_vertice(g, v);
-                //vertice_libera(v);
-                //memo_libera(v->nome);
-                //memo_libera(v->chave);
             }
 
             for(k = 0; k < nArestas; k++){
@@ -98,9 +93,13 @@ int main(){
         }
 
         grafo_imprime(g);
+
+        vertice_t* v = vertice_cria();
+        v = grafo_busca_vertice(g,"SMA");
+        grafo_busca_largura(g,v);
         grafo_caminho_curto(g,"SMA","CH1");
+
         grafo_destroi(g);
-        //vertice_libera(v);
         memo_libera(nome);
         memo_libera(chave);
         memo_libera(chave2);

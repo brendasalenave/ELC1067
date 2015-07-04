@@ -25,6 +25,5 @@ vertice_t* vertice_insere(vertice_t* v ,char* nome, char* chave){
 void vertice_libera(vertice_t* vertice){
     memo_libera(vertice->chave);
     memo_libera(vertice->nome);
-
     memo_libera(vertice);
 }

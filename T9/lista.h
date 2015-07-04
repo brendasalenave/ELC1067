@@ -14,7 +14,7 @@ lista_t* lista_inicializa();
 int lista_vazia(lista_t* l);
 lista_t* lista_insere(lista_t *l, struct vertice* vertice);
 lista_t* lista_busca(lista_t* l, char* chave);
-void imprimeLista(lista_t* lista);
+void lista_imprime(lista_t* lista);
 void lista_libera(lista_t *l);
 
 #endif // _LISTA_H_

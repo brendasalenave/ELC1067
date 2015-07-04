@@ -47,6 +47,7 @@ typedef struct vertice {
 } vertice_t;
 
 vertice_t* vertice_cria();
+vertice_t* vertice_insere(vertice_t* v ,char* nome, char* chave);
 void vertice_libera(vertice_t* vertice);
 
 #endif /* _VERTICE_H_ */

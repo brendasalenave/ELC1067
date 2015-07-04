@@ -23,7 +23,7 @@ int lista_vazia(lista_t* l){
 }
 
 
-void imprimeLista(lista_t* lista){
+void lista_imprime(lista_t* lista){
     lista_t* p = lista;
     if(p == NULL)
         printf("lista vazia");

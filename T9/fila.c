@@ -5,7 +5,6 @@
 
 fila_t* fila_cria(void){
     fila_t* f = (fila_t*)memo_aloca(sizeof(fila_t));
-    f->ini->vertice->cor = BRANCO;
     f->ini = f->fim = NULL;
 
     return f;
@@ -15,12 +14,14 @@ fila_t* fila_cria(void){
 no_t* ins_fim(no_t* fim, vertice_t* v) {
     no_t* p = (no_t*)memo_aloca(sizeof(no_t));
     p->vertice = v;
+    p->vertice->cor = BRANCO;
     p->prox = NULL;
 
     if (fim != NULL)  /* verifica se lista não estava vazia */
         fim->prox = p;
     return p;
 }
+
 /* função auxiliar: retira do início */
 no_t* ret_ini(no_t* ini) {
     no_t* p = ini->prox;
@@ -30,6 +31,7 @@ no_t* ret_ini(no_t* ini) {
 
 void fila_insere(fila_t* f, vertice_t* v) {
     f->fim = ins_fim(f->fim,v);
+    f->fim->vertice->cor = BRANCO;
     if (fila_vazia(f))  /* fila antes vazia? */
         f->ini = f->fim;
 }
