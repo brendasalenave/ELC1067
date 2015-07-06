@@ -31,19 +31,19 @@
 #include "lista.h"
 
 typedef enum {
-    BRANCO,
-    CINZA,
-    PRETO
+  BRANCO,
+  CINZA,
+  PRETO
 } cor_t;
 
 /* tipo vertice inserido na lista */
 typedef struct vertice {
-	char* chave;         /* chave identificador */
-	char* nome;          /* nome do vértice */
-	lista_t* adjacentes; /* lista com os vértices adjacentes (vizinhos) */
-	cor_t cor;           /* cor do vértice (usado na busca em largura) */
-	int   distancia;     /* distância do antecessor para este vértice */
-	struct vertice* ant; /* antecessor deste vértice (usado na busca em largura) */
+  char* chave;         /* chave identificador */
+  char* nome;          /* nome do vértice */
+  lista_t* adjacentes; /* lista com os vértices adjacentes (vizinhos) */
+  cor_t cor;           /* cor do vértice (usado na busca em largura) */
+  int   distancia;     /* distância do antecessor para este vértice */
+  struct vertice* ant; /* antecessor deste vértice (usado na busca em largura) */
 } vertice_t;
 
 vertice_t* vertice_cria();

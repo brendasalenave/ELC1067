@@ -15,8 +15,8 @@
 /* o tipo vértice está em vertice.h */
 
 typedef struct {
-	lista_t* vertices; /* lista de vértices */
-	int nvertices;     /* numero de vértices */
+  lista_t* vertices; /* lista de vértices */
+  int nvertices;     /* numero de vértices */
 } grafo_t;
 
 /* cria um grafo vazio */
